@@ -62,9 +62,20 @@ public:
 	int performAction();
 	void checkKeyword(string s); //calls performAction() if keywords are similar.
 
-private:
+protected:
 	string* keywords; //array of keywords associated with the object.
 	string description; //added to description that displays after a room's description	
 	int perishable; // some items may only last x number of turns. -1 for false. may not be in final game
 };
 
+class ThrowableItem: public Item{
+public:
+};
+
+class EdibleItem: public ThrowableItem{
+public:
+};
+
+class Weapon: public ThrowableItem{
+public:
+};
