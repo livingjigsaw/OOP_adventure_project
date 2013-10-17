@@ -8,6 +8,6 @@ struct attributeList{  //what actions can be done on an object?
 	bool alive;		//can die
 	bool destructible;	//can this item be removed entirely
 	int perishible; 	//item destroyed after x turns, 0 for false
-}
+};
 
 //this whole file may become turned into keywords
