@@ -83,13 +83,13 @@ protected:
 	int numItems;
 	Items* itemList;
 	string shortDes; //Short description of room.
-	string longDes; //Long description of room.
+	string longDes; //Long description of room. for use with "look" command
 	// Parallel arrays which corresponds to where a player can move.
 	string* moveCommands; //What user types. 
 	Room* moveDest; //Where user goes.
 };
 
-class MovingBody{
+class MovingBody{ //any object in game that can be associated with a room
 public:
 	MovingObject(){};
 	virtual ~MovingObject(){};
@@ -121,6 +121,6 @@ public:
 
 private:
 	string* keywords; //array of keywords associated with the object.
-	bool edible;
-	bool perishable;
+	string description; //added to description that displays after a room's description	
+	int perishable; // some items may only last x number of turns. -1 for false. may not be in final game
 };
