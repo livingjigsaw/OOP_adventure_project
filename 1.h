@@ -78,4 +78,4 @@ public:
 
 class Weapon: public ThrowableItem{
 public:
-};
+}; //this is a useless comment
