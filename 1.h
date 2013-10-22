@@ -1,5 +1,5 @@
-//2nd Header File begins here.
 #include <iostream>
+#include "stack.h"
 
 class GameInstance{
 private:
@@ -80,4 +80,5 @@ public:
 
 class Weapon: public ThrowableItem{
 public:
-}; //this is a useless comment
+}; 
+//this is a useless comment
