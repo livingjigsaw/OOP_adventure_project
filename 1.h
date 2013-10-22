@@ -64,6 +64,7 @@ public:
 	virtual int drop(){return 0;};
 
 protected:
+	string name;
 	string description; //added to description that displays after a room's description	
 	int perishable; // some items may only last x number of turns. -1 for false. may not be in final game
 	bool isEnvironmental;
