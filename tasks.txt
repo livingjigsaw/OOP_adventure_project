@@ -52,9 +52,10 @@ no lights are on, but there seems to be sunlight coming in from the roof
 in the center of this large room is a room with large windows, glass doors, and antennas
 to the east is a wooden door
 to the west is a massive metal hatch in the wall, obviously sealed shut and locked, with lots of warning lights
-that have no power.
+that have no power. 
 
-if someone says "hatch", there is a slot that looks like it can recieve a spherical object.
+if someone says "hatch", there is a slot that looks like it can recieve a spherical object, and that it has a 
+very reflective surface on it, somehow void of the dust that cover this place
 
 in the glass room, there is a large array of switches and controls, all out of power
 there is a flashlight there, as well as a first aid kit
@@ -74,7 +75,7 @@ returning to the glass room, none of the switches are on, but there is one blink
 
 press it, and you hear a loud, metallic clang on the floor behind you
 
-there is a metallic orb on the ground, perfectly smooth except for four indentations,
+there is a metallic orb on the ground, very metllic and shiny, perfectly smooth except for four indentations,
 placed symmetrically around the orb. (not seen by player, this thing holds four gems
 distributed thoughout the game, and will open the ending when in the right
 room with all four gems in the ball)
