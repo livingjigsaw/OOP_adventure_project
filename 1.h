@@ -59,13 +59,14 @@ class Item: public MovingBody{
 public:
 	Item(string n, bool e, bool p); //Edible? Perishable?
 	~Item();
-	int performAction();
-	void checkKeyword(string s); //calls performAction() if keywords are similar.
+	virtual int eat(){return 0;};
+	virtual int throw(){return 0;}; // Return -1 if subclass doesn't have implemented function, otherwise do function and return arbitrary non-negative number)
+	virtual int drop(){return 0;};
 
 protected:
-	string* keywords; //array of keywords associated with the object.
 	string description; //added to description that displays after a room's description	
 	int perishable; // some items may only last x number of turns. -1 for false. may not be in final game
+	bool isEnvironmental;
 };
 
 class ThrowableItem: public Item{

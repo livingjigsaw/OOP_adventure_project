@@ -27,7 +27,7 @@ Rooms: rooms need to:
 
 Player: the player needs to:
 	traverse rooms
-	carry out actions (parse instcuctions)
+	carry out actions (parse instructions)
 	carry items(have invntory)
 	see current inventory
 	
