@@ -87,7 +87,7 @@ void Room::moveDest(Room** mD)
 }
 
 
-Room** destLookup(string command)
+Room** Room::destLookup(string command)
 {
     for (i=numNeighbours; i>0; i--) {
         if (command==moveCommands[i]) {
