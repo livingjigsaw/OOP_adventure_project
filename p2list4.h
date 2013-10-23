@@ -1,3 +1,14 @@
+//
+//initialize
+//destroy
+//isEmpty
+//removeNth
+//append
+//find
+//getNth
+//getSize
+//
+
 template <class T>
 struct Node {
     T data;
