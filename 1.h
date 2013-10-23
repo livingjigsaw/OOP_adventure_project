@@ -11,7 +11,7 @@ private:
 
 class Room{
 public:
-	Room(string n, int numI, Items* list, string* mC, Room* mD);
+	Room(string n, int numI, Items* list,string SD, string LD, string* mC, Room** mD, int numN;);
 	~Room();
 	string name(); //getter
 	void name(string n); //setter
@@ -19,17 +19,18 @@ public:
 	void shortDescript(string newSD); //setter
 	string longDescript(); //getter
 	void longDescript(string newLD); //setter
-	Room* destLookup(string command); //Look up destinaton based on command.
+	Room** destLookup(string command); //Look up destinaton based on command.
 
 protected:
 	string roomName;
 	int numItems;
+    int numNeighbour;
 	Items* itemList;
 	string shortDes; //Short description of room.
 	string longDes; //Long description of room. for use with "look" command
 	// Parallel arrays which corresponds to where a player can move.
 	string* moveCommands; //What user types. 
-	Room* moveDest; //Where user goes.
+	Room** moveDest; //Where user goes.
 };
 
 class MovingBody{ //any object in game that can be associated with a room
