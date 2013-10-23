@@ -22,6 +22,7 @@ int main(){
 	cout << "There is a clock, a painting, a pocketknife, and a notebook in the room." << endl;
 	while (!gameOver)
 	{
+		//File input starts here.
 		string row;
 		string verb = "";
 		string noun = "";
@@ -36,11 +37,13 @@ int main(){
 		}
 		if (noun == "Quit")
 			break;
-		if (ss.rdbuf()->in_avail() != 0)
+		if (ss.rdbuf()->in_avail() != 0) // Check if there're any words left in buffer, if there are, then user input was more than 2 words.
 		{
 			cout << "Please only enter up to 2 words only." << endl;
-			noun = "";
+			noun = ""; // Clears the variables
 			verb = "";
 		}
+		//File input ends here.
+		//At this point, noun and verb are how they should be, functions can use them.
 	}
 }
