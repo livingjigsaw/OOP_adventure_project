@@ -29,29 +29,29 @@ void Room::shortDescript(string newSD) //setter
     shortDes=newSD;
 }
 
-string longDescript() const
+string Room::longDescript() const
 {
     return longDes;
 }
-void longDescript(string newLD)
+void Room::longDescript(string newLD)
 {
     longDes=newLD;
 }
 
-int numN() //getter
+int Room::numNeighbour() //getter
 {
     return numNeighbours
 }
-void numberItem(int x)//setter
+void Room::numberItem(int x)//setter
 {
     numNeighbours=x;
 }
 
-int numI()
+int Room::numberItem()
 {
     return numItems;
 }
-void numNeighbour(int x)
+void numberItem(int x)
 {
     numItems=x;
 }
