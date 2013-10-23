@@ -23,8 +23,12 @@ public:
     void numberItem(int x);//setter
     int numN(); //getter
     void numNeighbour(int x);//setter
-    list* Room::listItem(); //getter
-    void Room::listItem(list* n); //setter
+    list* listItem(); //getter
+    void  listItem(list* n); //setter
+    string* moveCommand(); //getter
+    void  moveCommand(list* n); //setter
+    Room** moveDest(); //getter
+    void  moveDest(Room** mD); //setter
     
 	Room** destLookup(string command); //Look up destinaton based on command.
 
