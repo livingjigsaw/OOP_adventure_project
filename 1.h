@@ -65,36 +65,43 @@ class Item: public MovingBody{
 public:
 	Item(string n);
 	~Item();
-	
-
+	virtual bool eat(){return 0;};
+	virtual bool throwItem(){return 0;}; // Return 0 if subclass doesn't have implemented function for try/catch statements)
+	virtual bool drop(){return 0;};
+	virtual bool attack(){return 0;};
+	virtual bool use(){return 0;};
+	virtual bool observe(){return 0;}; //read a journal, look at details of object; get description.
+	virtual bool changeStatus(){return 0;}; //defined for environmental and status items
+	virtual bool take(){return 0;};
 protected:
 	string name;
 	string description; //added to description that displays after a room's description	
-};
+
+	};
 
 class InventoryItem: public Item{
 protected:
 	
 public:
-	virtual int eat(){return 0;};
-	virtual int throwItem(){return 0;}; // Return 0 if subclass doesn't have implemented function, otherwise do function and return arbitrary non-negative number)
-	virtual int drop(){return 0;};
+	
 };
 
 class EdibleItem: public InventoryItem{
 public:
 };
 
+/* not in demo
 class Weapon: public InventoryItem{
 public:
 }; 
+*/
 
-class Perishable: 
+class Status
 
 class EnvironmentItem:public Item{
 	protected:
 		string requirement;		//the name of the item that must be used in room to satisfy and remove object.
 		
 	public:
-	
+		isConditionMet(string name);		//takes name of item that meets condition; items that meet environmental conditions will always be a certain type that have a "condition" bool that his function can access
 };
