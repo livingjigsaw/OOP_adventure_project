@@ -1,7 +1,7 @@
 #include <iostream>
 #include "1.h"
 
-Room(string n, int numI, list* nodeItem, string SD, string LD, string* mC, Room** mD, int numN){
+Room::Room(string n, int numI, list* nodeItem, string SD, string LD, string* mC, Room** mD, int numN){
     roomName=n;
     numItems=numI;
     list=itemList;
@@ -40,7 +40,7 @@ void Room::longDescript(string newLD)
 
 int Room::numNeighbour() //getter
 {
-    return numNeighbours
+    return numNeighbours;
 }
 void Room::numNeighbour(int x)//setter
 {
