@@ -59,11 +59,9 @@ private:
 
 class Item: public MovingBody{
 public:
-	Item(string n, bool e, bool p); //Edible? Perishable?
+	Item(string n);
 	~Item();
-	virtual int eat(){return 0;};
-	virtual int throwItem(){return 0;}; // Return 0 if subclass doesn't have implemented function, otherwise do function and return arbitrary non-negative number)
-	virtual int drop(){return 0;};
+	
 
 protected:
 	string name;
@@ -74,6 +72,9 @@ class InventoryItem: public Item{
 protected:
 	
 public:
+	virtual int eat(){return 0;};
+	virtual int throwItem(){return 0;}; // Return 0 if subclass doesn't have implemented function, otherwise do function and return arbitrary non-negative number)
+	virtual int drop(){return 0;};
 };
 
 class EdibleItem: public InventoryItem{
