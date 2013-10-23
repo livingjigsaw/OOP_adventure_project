@@ -23,6 +23,9 @@ public:
     void numberItem(int x);//setter
     int numN(); //getter
     void numNeighbour(int x);//setter
+    list* Room::listItem(); //getter
+    void Room::listItem(list* n); //setter
+    
 	Room** destLookup(string command); //Look up destinaton based on command.
 
 protected:
@@ -34,7 +37,7 @@ protected:
 	string longDes; //Long description of room. for use with "look" command
 	// Parallel arrays which corresponds to where a player can move.
 	string* moveCommands; //What user types. 
-	Room** moveDest; //Where user goes.
+	Room** moveDests; //Where user goes.
 };
 
 class MovingBody{ //any object in game that can be associated with a room
