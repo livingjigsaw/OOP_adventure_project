@@ -1,7 +1,7 @@
 #include <iostream>
 #include "1.h"
 
-Room(string n, int numI, Items* list, string SD, string LD, string* mC, Room** mD, int numN){
+Room(string n, int numI, list* nodeItem, string SD, string LD, string* mC, Room** mD, int numN){
     roomName=n;
     numItems=numI;
     list=itemList;
@@ -29,38 +29,69 @@ void Room::shortDescript(string newSD) //setter
     shortDes=newSD;
 }
 
-string longDescript() const
+string Room::longDescript() const
 {
     return longDes;
 }
-void longDescript(string newLD)
+void Room::longDescript(string newLD)
 {
     longDes=newLD;
 }
 
-int numN() //getter
+int Room::numNeighbour() //getter
 {
     return numNeighbours
 }
-void numberItem(int x)//setter
+void Room::numNeighbour(int x)//setter
 {
     numNeighbours=x;
 }
 
-int numI()
+int Room::numberItem()
 {
     return numItems;
 }
-void numNeighbour(int x)
+void Room::numberItem(int x)
 {
     numItems=x;
 }
+ 
+list* Room::listItem()
+{
+    return list;
+}
 
-Room** destLookup(string command)
+void Room::listItem(list* n)
+{
+    nodeItem=n;
+}
+
+string* Room::moveCommand()
+{
+    return moveCommands;
+}
+
+void Room::moveCommand(string* mC)
+{
+    moveCommands=mC;
+}
+
+Room** Room::moveDest()
+{
+    return moveDests;
+}
+
+void Room::moveDest(Room** mD)
+{
+    moveDests=mD;
+}
+
+
+Room** Room::destLookup(string command)
 {
     for (i=numNeighbours; i>0; i--) {
-        if (command==mC[i]) {
-            return mD[i];
+        if (command==moveCommands[i]) {
+            return moveDests[i];
         }
     }
 }
