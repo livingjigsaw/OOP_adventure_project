@@ -9,7 +9,7 @@ Room(string n, int numI, Items* list, string SD, string LD, string* mC, Room** m
     longDes=LD;
     moveCommands=mC;
     moveDest=mD;
-    numNeighbour=numN;
+    numNeighbours=numN;
 }
 string Room::name() const
 {
@@ -38,9 +38,27 @@ void longDescript(string newLD)
     longDes=newLD;
 }
 
+int numN() //getter
+{
+    return numNeighbours
+}
+void numberItem(int x)//setter
+{
+    numNeighbours=x;
+}
+
+int numI()
+{
+    return numItems;
+}
+void numNeighbour(int x)
+{
+    numItems=x;
+}
+
 Room** destLookup(string command)
 {
-    for (i=numNeighbour; i>0; i--) {
+    for (i=numNeighbours; i>0; i--) {
         if (command==mC[i]) {
             return mD[i];
         }

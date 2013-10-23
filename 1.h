@@ -19,12 +19,16 @@ public:
 	void shortDescript(string newSD); //setter
 	string longDescript(); //getter
 	void longDescript(string newLD); //setter
+    int numI(); //getter
+    void numberItem(int x);//setter
+    int numN(); //getter
+    void numNeighbour(int x);//setter
 	Room** destLookup(string command); //Look up destinaton based on command.
 
 protected:
 	string roomName;
 	int numItems;
-    int numNeighbour;
+    int numNeighbours;
 	Items* itemList;
 	string shortDes; //Short description of room.
 	string longDes; //Long description of room. for use with "look" command
