@@ -25,7 +25,7 @@ public:
     void numberItem(int x);//setter
     int numN(); //getter
     void numNeighbour(int x);//setter
-    list* listItem(); //getter
+    List* listItem(); //getter
     void  listItem(list* n); //setter
     string* moveCommand(); //getter
     void  moveCommand(list* n); //setter
@@ -38,7 +38,7 @@ protected:
 	string roomName;
 	int numItems;
     int numNeighbours;
-	Items* itemList;
+	List* itemList;
 	string shortDes; //Short description of room.
 	string longDes; //Long description of room. for use with "look" command
 	// Parallel arrays which corresponds to where a player can move.
@@ -46,19 +46,8 @@ protected:
 	Room** moveDests; //Where user goes.
 };
 
-class MovingBody{ //any object in game that can be associated with a room
-public:
-	MovingBody(){};
-	virtual ~MovingBody(){};
-	virtual int performAction(){}; //return id for action.
-	string name(); //getter
 
-protected:
-	string name;
-	
-};
-
-class Player: public MovingBody{
+class Player{
 public:
 	Player(Room* l){location = l;};
 	~Player();
@@ -66,11 +55,11 @@ public:
 
 private:
 	bool isDead; //Ends game if player is dead. 
-	Item* inventory;
+	List* inventory;
 	Room* location;
 };
 
-class Item: public MovingBody{
+class Item{
 public:
 	Item(string n);
 	~Item();
@@ -86,7 +75,7 @@ protected:
 	string name;
 	string description; //added to description that displays after a room's description	
 
-	};
+};
 
 class InventoryItem: public Item{
 protected:
