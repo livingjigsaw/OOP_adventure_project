@@ -1,6 +1,29 @@
 #include <iostream>
 #include "1.h"
 
+
+//operators
+template<class T>
+bool Tuples::operator ==(Tuples<T> a, T b){
+    if (a.size()!=b.size()) {
+        return false;
+    }
+    for (int i=0; i<a.size(); i++) {
+        if a[i] != b[i]
+            return false;
+    }
+    return true;
+}
+
+template<class T>
+bool Tuples::operator !=(Tuples<T> a, T b){
+    for (int i=0; i<a.size(); i++) {
+        if (a[i]==b[i])
+            return true;
+    }
+    return false;
+}
+
 //Room functions begin here.
 Room::Room(string n, int numI, list* nodeItem, string SD, string LD, string* mC, Room** mD, int numN){
     roomName=n;
