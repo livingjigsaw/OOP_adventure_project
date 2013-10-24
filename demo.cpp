@@ -1,10 +1,11 @@
 #include <iostream>
+#include <string>
 #include <sstream>
-//#include "1.h"
+#include "1.h"
 
 using namespace std;
 
-string toUpper(string& in){
+void toUpper(string& in){
 	int i=0;
 	char c;
 	while (in[i]){
@@ -17,24 +18,27 @@ string toUpper(string& in){
 
 
 int main(){
-	Item Journal("Journal");
-	Item PocketKnife("Pocketknife");
-	Item Clock("AlarmClock");
-	Item Painting("Painting");
-	Item Hatch("Hatch");
-	Item Flashlight("Flashlight");
-	Item Darkness("Darkness");
-	Item GeneratorSwitch("GeneratorSwitch");
-	Item OrbButton("OrbButton");
-	Item Orb("Orb");
+	InventoryItem Journal("Journal");
+	InventoryItem PocketKnife("Pocketknife");
+	InventoryItem Clock("AlarmClock");
+	InventoryItem Painting("Painting");
+//	InventoryItem Hatch("Hatch");
+	InventoryItem Flashlight("Flashlight");
+	//Item Darkness("Darkness");
+//	Item GeneratorSwitch("GeneratorSwitch");
+//	Item OrbButton("OrbButton");
+//	Item Orb("Orb");
 	
-	List firstRList[3] = {Journal, PocketKnife, Clock}; // First room's item list.
-	string firstRMC [1] = {North}; // First room's move command.
-	Room* firstRMD [1] = {SecondRoom}; // First room's move destination. URGENT! THIS ONLY WORKS AFTER THE SECOND ROOM HAS BEEN CONSTRUCTED.
-	Room FirstRoom("Firstroom", 3, firstRList ,"A small, generic room with basic living necessities. There is one door to the north." ,"You are on a stiff bed in a small, generic room with basic living necessities. The room seems old, partially ruined. There is one door, in an arbitrary direction that will be designated as north."
-		, firstRMC, firstRMD, 1); //Constructing the first room.
+	List<InventoryItem> firstRList;// First room's item list.
+	append(firstRList, Journal);
+	append(firstRList, PocketKnife);
+	append(firstRList, Clock);
+	append(firstRList, Painting);
+	string* firstRMC = new string [1]; // First room's move command.
+	Room** firstRMD =new Room*[1]; firstRMD[0]=NULL; // First room's move destination. URGENT! THIS ONLY WORKS AFTER THE SECOND ROOM HAS BEEN CONSTRUCTED.
+	Room FirstRoom("Firstroom", 3, &firstRList ,"A small, generic room with basic living necessities. There is one door to the north." ,"You are on a stiff bed in a small, generic room with basic living necessities. The room seems old, partially ruined. There is one door, in an arbitrary direction that will be designated as north.", firstRMC, firstRMD, 1); //Constructing the first room.
 	Player 	Player1(&FirstRoom);
-
+	
 	char check1;
 	bool gameOver = false;
 	cout << "Welcome to [WIP] Adventure! Do you need instructions? (Y/N)" << endl;
