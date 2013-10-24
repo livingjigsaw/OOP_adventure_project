@@ -87,7 +87,7 @@ public:
 //	virtual bool attack(){return 0;}; not needed in demo
 //	needed??	virtual bool changeStatus(string search, List* charInventory){search=search; charInventory=charInventory;return 0;};		//for status items, changes their state for interacting with each other
 	virtual bool changeEnv(List* roomInventory){roomInventory=roomInventory;return 0;}; //defined for environmental items
-	virtual bool observe(List* charInventory){charInventory=charInventory;return 0;}; //read a journal, look at details of object; get description.
+	virtual bool observe(ostream lhs){lhs=lhs;return 0;}; //read a journal, look at details of object; get description.
 
 };
 
@@ -105,6 +105,9 @@ public:
 
 class EdibleItem: public InventoryItem{
 public:
+	EdibleItem(){};
+	~EdibleItem(){};
+	
 	bool eat(List* charInventory);
 };
 
@@ -129,5 +132,9 @@ class EnvironmentItem:public Item{
 		string requirement;		//the name of the item that must be used in room to satisfy and remove object.
 		
 	public:
+		//getter
+		string requiredItem(){return requirement;};
+		//setters
+		void requiredItem(string in){requirement=in;};
 		bool changeEnv(List* roomInventory); //defined for environmental items	//takes name of item that meets condition; check itemState() from item; removes itself from room if met. 
 };
