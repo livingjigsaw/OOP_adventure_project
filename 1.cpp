@@ -126,7 +126,7 @@ void Player::performAction(string verb, string noun)
             if (((walker -> data) -> name()) == noun)
             {
                 success = true;
-                (walker -> data) -> take()
+                (walker -> data) -> take();
                 /*
                 append (inventory, (walker -> data)); // Adds item to player inventory.
                 removeNth ((currentLocation -> itemList), i); // Removes item from room item list.
