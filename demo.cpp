@@ -5,6 +5,21 @@
 using namespace std;
 
 int main(){
+	Item Journal("Journal", )
+	Item PocketKnife("Pocketknife",)
+	Item Clock("AlarmClock", )
+	Item Painting("Painting", )
+	Item Hatch()
+	Item Flashlight()
+	Item Darkness()
+	Item GeneratorSwitch()
+	Item OrbButton()
+	Item Orb()
+	
+	
+	Room FirstRoom("Firstroom", 3,);
+	Player 	Player1(&FirstRoom);
+
 	char check1;
 	bool gameOver = false;
 	cout << "Welcome to [WIP] Adventure! Do you need instructions? (Y/N)" << endl;
@@ -12,7 +27,7 @@ int main(){
 	if (check1 == 'Y' || check1 == 'y')
 	{
 		cout << "You navigate this game purely through text instructions." << endl;
-		cout << "When prompted, please insert what you wish your character to do using commands of not more than two words." << endl;
+		cout << "When prompted, please insert what you wish your character to do using commands of not more than two words (And of the form 'verb + noun')." << endl;
 		cout << "If stuck, type 'Help' for some hints." << endl;
 		cout << endl;
 	}
@@ -45,5 +60,6 @@ int main(){
 		}
 		//File input ends here.
 		//At this point, noun and verb are how they should be, functions can use them.
+
 	}
 }

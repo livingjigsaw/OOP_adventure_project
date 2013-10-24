@@ -1,5 +1,6 @@
 #include <iostream>
 #include "stack.h"
+#include "p2list4.h"
 
 /*
 class GameInstance{
@@ -52,6 +53,7 @@ public:
 	~Player();
 	Room* currentLocation(); //getter
 	void currentLocation(Room* newLocation); //setter
+	void performAction(string verb, string noun);
 
 private:
 	bool isDead; //Ends game if player is dead. 

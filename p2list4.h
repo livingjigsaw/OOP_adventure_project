@@ -131,26 +131,26 @@ void removeNth(List<T>& l,int n)
         walker=walker->next;
     }
     if (getSize(l)==1 && n==1) {
-        delete l.head;
+        //delete l.head;
         l.head=NULL;
     }
     else if (n==1) {
         Node<T>* del=l.head;
         l.head=l.head->next;
         l.head->prev=NULL;
-        delete del;
+        //delete del;
         del=NULL;
     }
     else{
         if (walker->next==NULL) {
             trailer->next=NULL;
-            delete walker;
+            //delete walker;
             walker=NULL;
         }
         else{
            trailer->next=walker->next;
            walker->next->prev=walker->prev;
-           delete walker;
+           //delete walker;
            walker=NULL;
         }
     }
