@@ -2,7 +2,6 @@
 #include <string>
 #include <sstream>
 #include "1.h"
-
 using namespace std;
 
 void toUpper(string& in){
@@ -18,7 +17,9 @@ void toUpper(string& in){
 
 
 int main(){
+	cout << "debug1"<<endl;
 	InventoryItem Journal("Journal");
+	cout << "debug2\n";
 	InventoryItem PocketKnife("Pocketknife");
 	InventoryItem Clock("AlarmClock");
 	InventoryItem Painting("Painting");
@@ -28,12 +29,17 @@ int main(){
 //	Item GeneratorSwitch("GeneratorSwitch");
 //	Item OrbButton("OrbButton");
 //	Item Orb("Orb");
-	
+		cout << "debug3\n";
 	List<Item*> firstRList;// First room's item list.
+		cout << "debug4\n"; //*********current final success**********
 	append(firstRList, (Item*)&Journal);
+	cout << "debug5\n";
 	append(firstRList, (Item*)&PocketKnife);
+	cout << "debug6\n";
 	append(firstRList, (Item*)&Clock);
+	cout << "debug7\n";
 	append(firstRList, (Item*)&Painting);
+	cout << "debug8\n";
 	string* firstRMC = new string [1]; // First room's move command.
 	Room** firstRMD =new Room*[1]; firstRMD[0]=NULL; // First room's move destination. URGENT! THIS ONLY WORKS AFTER THE SECOND ROOM HAS BEEN CONSTRUCTED.
 	Room FirstRoom("Firstroom", 3, &firstRList ,"A small, generic room with basic living necessities. There is one door to the north." ,"You are on a stiff bed in a small, generic room with basic living necessities. The room seems old, partially ruined. There is one door, in an arbitrary direction that will be designated as north.", firstRMC, firstRMD, 1); //Constructing the first room.
