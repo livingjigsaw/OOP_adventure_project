@@ -1,6 +1,7 @@
 #include <iostream>
 #include "stack.h"
 
+/*
 class GameInstance{
 private:
 	string name; 
@@ -8,6 +9,7 @@ private:
 	int turnCounter; //Counter that keeps track of number of moves made.
 	int points; // Counter to keep track of points
 };
+*/
 
 class Room{
 public:
@@ -76,7 +78,7 @@ public:
 	virtual bool throwItem(){return 0;}; // Return 0 if subclass doesn't have implemented function for try/catch statements)
 	virtual bool drop(){return 0;};
 	virtual bool attack(){return 0;};
-	virtual bool use(){return 0;};
+	virtual bool changeStatus(){return 0;};		//for environment/status items, changes their state for interacting with each other
 	virtual bool observe(){return 0;}; //read a journal, look at details of object; get description.
 	virtual bool changeStatus(){return 0;}; //defined for environmental and status items
 	virtual bool take(){return 0;};
@@ -103,7 +105,12 @@ public:
 }; 
 */
 
-class Status
+class StatusItem: public InventoryItem{ 	//these will interact with environmental items
+protected:
+	
+public:
+
+}
 
 class EnvironmentItem:public Item{
 	protected:
