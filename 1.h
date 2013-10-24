@@ -14,7 +14,7 @@ private:
 
 class Room{
 public:
-	Room(string n, int numI, list* nodeItem, string SD, string LD, string* mC, Room** mD, int numN;);
+	Room(string n, int numI, List* nodeItem, string SD, string LD, string* mC, Room** mD, int numN;);
 	~Room();
 	string name(); //getter
 	void name(string n); //setter

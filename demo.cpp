@@ -5,19 +5,22 @@
 using namespace std;
 
 int main(){
-	Item Journal("Journal", )
-	Item PocketKnife("Pocketknife",)
-	Item Clock("AlarmClock", )
-	Item Painting("Painting", )
-	Item Hatch()
-	Item Flashlight()
-	Item Darkness()
-	Item GeneratorSwitch()
-	Item OrbButton()
-	Item Orb()
+	Item Journal("Journal");
+	Item PocketKnife("Pocketknife");
+	Item Clock("AlarmClock");
+	Item Painting("Painting");
+	Item Hatch("Hatch");
+	Item Flashlight("Flashlight");
+	Item Darkness("Darkness");
+	Item GeneratorSwitch("GeneratorSwitch");
+	Item OrbButton("OrbButton");
+	Item Orb("Orb");
 	
-	
-	Room FirstRoom("Firstroom", 3,);
+	List firstRList[3] = {Journal, PocketKnife, Clock}; // First room's item list.
+	string firstRMC [1] = {North}; // First room's move command.
+	Room* firstRMD [1] = {SecondRoom}; // First room's move destination. URGENT! THIS ONLY WORKS AFTER THE SECOND ROOM HAS BEEN CONSTRUCTED.
+	Room FirstRoom("Firstroom", 3, firstRList ,"A small, generic room with basic living necessities. There is one door to the north." ,"You are on a stiff bed in a small, generic room with basic living necessities. The room seems old, partially ruined. There is one door, in an arbitrary direction that will be designated as north."
+		, firstRMC, firstRMD, 1); //Constructing the first room.
 	Player 	Player1(&FirstRoom);
 
 	char check1;
