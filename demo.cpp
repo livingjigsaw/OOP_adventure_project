@@ -29,11 +29,11 @@ int main(){
 //	Item OrbButton("OrbButton");
 //	Item Orb("Orb");
 	
-	List<InventoryItem> firstRList;// First room's item list.
-	append(firstRList, Journal);
-	append(firstRList, PocketKnife);
-	append(firstRList, Clock);
-	append(firstRList, Painting);
+	List<Item*> firstRList;// First room's item list.
+	append(firstRList, (Item*)&Journal);
+	append(firstRList, (Item*)&PocketKnife);
+	append(firstRList, (Item*)&Clock);
+	append(firstRList, (Item*)&Painting);
 	string* firstRMC = new string [1]; // First room's move command.
 	Room** firstRMD =new Room*[1]; firstRMD[0]=NULL; // First room's move destination. URGENT! THIS ONLY WORKS AFTER THE SECOND ROOM HAS BEEN CONSTRUCTED.
 	Room FirstRoom("Firstroom", 3, &firstRList ,"A small, generic room with basic living necessities. There is one door to the north." ,"You are on a stiff bed in a small, generic room with basic living necessities. The room seems old, partially ruined. There is one door, in an arbitrary direction that will be designated as north.", firstRMC, firstRMD, 1); //Constructing the first room.
@@ -80,6 +80,7 @@ int main(){
 			verb = "";
 		}
 		//File input ends here.
+		Player1.performAction(verb, noun);
 		//At this point, noun and verb are how they should be, functions can use them.
 
 	}
