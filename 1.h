@@ -80,14 +80,14 @@ public:
 	void description(string in){info=in;};
 	
 	//for inheritance
-	virtual bool eat(string search, List* charInventory){search=search; charInventory=roomInventory; return 0;}; //no-ops to avoid compiler errors, needs parameters so child classes properly inherit
+	virtual bool eat(List* charInventory){charInventory=roomInventory; return 0;}; //no-ops to avoid compiler errors, needs parameters so child classes properly inherit
 //	virtual bool throwItem(){return 0;}; not needed in demo
-	virtual bool drop(string search, List* roomInventory, List* charInventory){search=search; charInventory=charInventory;roomInventory=roomInventory;return 0;};
-	virtual bool take(string search, List* roomInventory, List* charInventory){search=search; charInventory=charInventory;roomInventory=roomInventory;return 0;};
+	virtual bool drop(List* roomInventory, List* charInventory){charInventory=charInventory;roomInventory=roomInventory;return 0;};
+	virtual bool take(List* roomInventory, List* charInventory){charInventory=charInventory;roomInventory=roomInventory;return 0;};
 //	virtual bool attack(){return 0;}; not needed in demo
 //	needed??	virtual bool changeStatus(string search, List* charInventory){search=search; charInventory=charInventory;return 0;};		//for status items, changes their state for interacting with each other
-	virtual bool changeEnv(string search, List* roomInventory){search=search; roomInventory=roomInventory;return 0;}; //defined for environmental items
-	virtual bool observe(string search, List* charInventory){return 0;}; //read a journal, look at details of object; get description.
+	virtual bool changeEnv(List* roomInventory){roomInventory=roomInventory;return 0;}; //defined for environmental items
+	virtual bool observe(List* charInventory){charInventory=charInventory;return 0;}; //read a journal, look at details of object; get description.
 
 };
 
@@ -97,15 +97,15 @@ public:
 	~InventoryItem(){};
 
 	// unique inherited functions
-	bool take(string search, List* roomInventory, List* charInventory);
-	bool drop(string search, List* roomInventory, List* charInventory);
-	bool observe(string search, List* charInventory);
+	bool take(List* roomInventory, List* charInventory);
+	bool drop(List* roomInventory, List* charInventory);
+	bool observe(List* charInventory);
 	
 };
 
 class EdibleItem: public InventoryItem{
 public:
-	bool eat(string search, List* charInventory);
+	bool eat(List* charInventory);
 };
 
 /* not in demo
@@ -129,5 +129,5 @@ class EnvironmentItem:public Item{
 		string requirement;		//the name of the item that must be used in room to satisfy and remove object.
 		
 	public:
-		bool changeEnv(string search, List* roomInventory); //defined for environmental items	//takes name of item that meets condition; check itemState() from item; removes itself from room if met. 
+		bool changeEnv(List* roomInventory); //defined for environmental items	//takes name of item that meets condition; check itemState() from item; removes itself from room if met. 
 };
