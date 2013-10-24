@@ -4,13 +4,14 @@
 Room::Room(string n, int numI, list* nodeItem, string SD, string LD, string* mC, Room** mD, int numN){
     roomName=n;
     numItems=numI;
-    list=itemList;
+    itemList = nodeItem;
     shortDes=SD;
     longDes=LD;
     moveCommands=mC;
     moveDest=mD;
     numNeighbours=numN;
 }
+
 string Room::name() const
 {
     return roomName;

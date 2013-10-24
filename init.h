@@ -13,7 +13,7 @@ initDemo(){
 	
 	
 	Room FirstRoom("Firstroom", 3,);
-
+	Player 	Player1(&FirstRoom);
 
 
 
