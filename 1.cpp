@@ -1,6 +1,7 @@
 #include <iostream>
 #include "1.h"
 
+//Room functions begin here.
 Room::Room(string n, int numI, list* nodeItem, string SD, string LD, string* mC, Room** mD, int numN){
     roomName=n;
     numItems=numI;
@@ -96,3 +97,21 @@ Room** Room::destLookup(string command)
         }
     }
 }
+
+//Player functions begin here.
+Player::Player(Room* l)
+{
+    location = l;
+    isDead = false;
+}
+
+Room* Player::currentLocation()
+{
+    return location;
+}
+
+void Player::currentLocation(Room* newLocation)
+{
+    location = newLocation;
+}
+

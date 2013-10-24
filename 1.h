@@ -46,12 +46,12 @@ protected:
 	Room** moveDests; //Where user goes.
 };
 
-
 class Player{
 public:
-	Player(Room* l){location = l;};
+	Player(Room* l);
 	~Player();
-	string currentLocation(); //getter
+	Room* currentLocation(); //getter
+	void currentLocation(Room* newLocation); //setter
 
 private:
 	bool isDead; //Ends game if player is dead. 
