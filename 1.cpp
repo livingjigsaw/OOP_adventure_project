@@ -4,7 +4,7 @@
 
 //operators
 template<class T>
-bool Tuples::operator ==(Tuples<T> a, T b){
+bool operator ==(Tuples<T> a, T b){
     if (a.size()!=b.size()) {
         return false;
     }
@@ -16,7 +16,7 @@ bool Tuples::operator ==(Tuples<T> a, T b){
 }
 
 template<class T>
-bool Tuples::operator !=(Tuples<T> a, T b){
+bool operator !=(Tuples<T> a, T b){
     for (int i=0; i<a.size(); i++) {
         if (a[i]==b[i])
             return true;
