@@ -123,13 +123,17 @@ void Player::performAction(string verb, string noun)
         Node<T>* walker = (currentLocation -> itemList) -> head;    
         for (int i = 0; i < getSize((currentLocation) -> itemList); i++)
         {
-            if (((walker -> data) -> name) == noun)
+            if (((walker -> data) -> name()) == noun)
             {
                 success = true;
+                (walker -> data) -> take()
+                /*
                 append (inventory, (walker -> data)); // Adds item to player inventory.
                 removeNth ((currentLocation -> itemList), i); // Removes item from room item list.
+                */
             }
         }
+        walker = NULL;
         if (success == true)
             cout << "You have taken " << noun << "." << endl;
         else 

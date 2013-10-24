@@ -65,6 +65,7 @@ class Item{
 public:
 	Item(string n);
 	~Item();
+	string name(){return name;};
 	virtual bool eat(){return 0;};
 	virtual bool throwItem(){return 0;}; // Return 0 if subclass doesn't have implemented function for try/catch statements)
 	virtual bool drop(){return 0;};
