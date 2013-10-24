@@ -4,6 +4,18 @@
 
 using namespace std;
 
+string toUpper(string& in){
+	int i=0;
+	char c;
+	while (in[i]){
+		c=in[i];
+		c=toupper(c);
+		in[i]=c;
+		i++;
+	}
+}
+
+
 int main(){
 	Item Journal("Journal");
 	Item PocketKnife("Pocketknife");
@@ -48,6 +60,8 @@ int main(){
 		stringstream ss (row);
 		ss >> verb;
 		ss >> noun;
+		toUpper(verb);
+		toUpper(noun);
 		if (noun == "")
 		{
 			noun = verb;

@@ -140,7 +140,7 @@ void Player::currentLocation(Room* newLocation)
 
 void Player::performAction(string verb, string noun)
 {
-    if (verb == "take" || verb == "Take")
+    if (verb == "TAKE")
     {
         bool found = false;
 		bool status = false;
@@ -170,7 +170,7 @@ void Player::performAction(string verb, string noun)
     
     // drop function
     
-    if (verb == "drop" || verb == "Drop")
+    if (verb == "DROP")
     {
         bool found = false;
 		bool status = false;
