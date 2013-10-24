@@ -167,4 +167,31 @@ void Player::performAction(string verb, string noun)
 		else 
             cout << "There is no " << noun << " here." << endl;
     }
+    
+    // drop function
+    
+    if (verb == "drop" || verb == "Drop")
+    {
+        bool found = false;
+		bool status = false;
+        Node<T>* walker = charInventory -> head;    
+        for (int i = 0; i < getSize(charInventory); i++)
+        {
+            if (((walker -> data) -> name()) == noun)
+            {
+                found = true;
+                status = (walker -> data) -> drop();
+            }
+        }
+        walker = NULL;
+        if (found){
+			if (status)
+				cout << "You have drop " << noun << "." << endl;
+			else
+				cout << "You cannot do that with that object\n";
+        }
+		else 
+            cout << "You don't have" << noun << " here." << endl;
+    }
+
 }
