@@ -42,7 +42,10 @@ int main(){
 	cout << "debug8\n";
 	string* firstRMC = new string [1]; // First room's move command.
 	Room** firstRMD =new Room*[1]; firstRMD[0]=NULL; // First room's move destination. URGENT! THIS ONLY WORKS AFTER THE SECOND ROOM HAS BEEN CONSTRUCTED.
-	Room FirstRoom("Firstroom", 3, &firstRList ,"A small, generic room with basic living necessities. There is one door to the north." ,"You are on a stiff bed in a small, generic room with basic living necessities. The room seems old, partially ruined. There is one door, in an arbitrary direction that will be designated as north.", firstRMC, firstRMD, 1); //Constructing the first room.
+    string n="Firstroom";
+    string SD="A small, generic room with basic living necessities. There is one door to the north.";
+    string LD="You are on a stiff bed in a small, generic room with basic living necessities. The room seems old, partially ruined. There is one door, in an arbitrary direction that will be designated as north.";
+	Room FirstRoom(n, 3, &firstRList ,SD ,LD, firstRMC,firstRMD, 1); //Constructing the first room.
 	Player 	Player1(&FirstRoom);
 	
 	char check1;
