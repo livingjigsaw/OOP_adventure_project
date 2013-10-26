@@ -20,8 +20,8 @@ protected:
 	string info; //added to description that displays after a room's description	
 public:
 	Item(){};
-	Item(string n);
-	~Item(){};
+	Item(string n){name(n);};
+	virtual ~Item(){};
 	
 	//getters
 	string name(){return itemName;};
@@ -45,6 +45,7 @@ public:
 
 class InventoryItem: public Item{
 public:
+	InventoryItem(){};
 	InventoryItem(string in){name(in);};
 	~InventoryItem(){};
 
@@ -63,7 +64,7 @@ public:
 	bool eat(List<Item*>* charInventory);
 };
 *?
-/* not in demo
+not in demo
 class Weapon: public InventoryItem{
 public:
 }; 
@@ -73,6 +74,9 @@ class StatusItem: public InventoryItem{ 	//these will interact with environmenta
 protected:
 	bool status; //this affects the appropriate environment variable
 public:
+	StatusItem(){};
+	StatusItem(string in){name(in);};
+	~StatusItem(){};
 	//getter
 	bool itemState(){return status;};
 	//setter
@@ -80,15 +84,17 @@ public:
 };
 
 class EnvironmentItem:public Item{
-	protected:
-		string requirement;		//the name of the item that must be used in room to satisfy and remove object.
+protected:
+	string requirement;		//the name of the item that must be used in room to satisfy and remove object.
 		
-	public:
-		//getter
-		string requiredItem(){return requirement;};
-		//setters
-		void requiredItem(string in){requirement=in;};
-		bool changeEnv(List<Item*>* roomInventory); //defined for environmental items	//takes name of item that meets condition; check itemState() from item; removes itself from room if met. 
+public:
+	EnvironmentItem(){};
+	~EnvironmentItem(){};
+	//getter
+	string requiredItem(){return requirement;};
+	//setters
+	void requiredItem(string in){requirement=in;};
+	bool changeEnv(List<Item*>* roomInventory); //defined for environmental items	//takes name of item that meets condition; check itemState() from item; removes itself from room if met. 
 };
 
 
