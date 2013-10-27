@@ -83,7 +83,7 @@ int main(){
 			noun = verb;
 			verb = "";
 		}
-		if (noun == "Quit")
+		if (noun == "Quit" || noun == "QUIT")
 			break;
 		if (ss.rdbuf()->in_avail() != 0) // Check if there're any words left in buffer, if there are, then user input was more than 2 words.
 		{
