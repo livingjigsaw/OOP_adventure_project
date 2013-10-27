@@ -93,3 +93,14 @@ void Player::performAction(string verb, string noun)
     }
 
 }
+
+//Item functions begin here.
+/*
+bool InventoryItem::take(List<Item*>* roomInventory, List<Item*>* charInventory, int x)
+{
+    append (charInventory, this);
+    removeNth (roomInventory, x);
+    return true;
+}
+MEGA FAIL
+*/
