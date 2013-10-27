@@ -18,13 +18,13 @@ void toUpper(string& in){
 
 int main(){
 	cout << "debug1"<<endl;
-	InventoryItem Journal("Journal");
+	InventoryItem Journal("JOURNAL");
 	cout << "debug2\n";
-	InventoryItem PocketKnife("Pocketknife");
-	InventoryItem Clock("AlarmClock");
-	InventoryItem Painting("Painting");
+	InventoryItem PocketKnife("POCKETKNIFE");
+	InventoryItem Clock("ALARMCLOCK");
+	InventoryItem Painting("PAINTING");
 //	InventoryItem Hatch("Hatch");
-	InventoryItem Flashlight("Flashlight");
+	InventoryItem Flashlight("FLASHLIGHT");
 	//Item Darkness("Darkness");
 //	Item GeneratorSwitch("GeneratorSwitch");
 //	Item OrbButton("OrbButton");
