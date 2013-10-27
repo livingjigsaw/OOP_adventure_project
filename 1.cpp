@@ -30,7 +30,7 @@ Player::Player(Room* l)
 {
     location = l;
     isDead = false;
-	List<Item*>* start=NULL;
+	List<Item*>* start=new List<Item*>;
 	initialize(*start);
 	inventory(start);
 }

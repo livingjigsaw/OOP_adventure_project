@@ -3,10 +3,6 @@
 // items implmentation
 using namespace std;
 
-Item::Item(string n){
-	name(n);
-}
-
 bool InventoryItem::take(List<Item*>* roomInventory, List<Item*>* charInventory){
 	InventoryItem* now = this;
 	append(*charInventory, (Item*)now);

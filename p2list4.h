@@ -138,7 +138,7 @@ void removeNth(List<T>& l,int n)
         Node<T>* del=l.head;
         l.head=l.head->next;
         l.head->prev=NULL;
-        //delete del;
+        del=del;	//no-op to remove unused but set variable compile warning
         del=NULL;
     }
     else{
