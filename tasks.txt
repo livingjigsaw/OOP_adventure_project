@@ -84,12 +84,8 @@ pick it up.
 
 and you are instantly teleported into a new place, where the demo ends!
 
-
-
-
-
-
-
-
-	
-	
+AS OF OCT 27:
+THINGS TO TEST:
+- PLAYER HAS TO MOVE BETWEEN ROOMS CORRECTLY.
+- ENVIRONMENTAL ITEMS HAVE TO AFFECT ROOMS.
+- STATUS ITEMS HAVE TO AFFECT ENVIRONMENTAL ITEMS.
