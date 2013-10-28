@@ -101,6 +101,7 @@ void Player::performAction(string verb, string noun)
             {
                 found = true;
                 status = (walker -> data)->observe();
+                break;
             }
         }
         walker = NULL;
