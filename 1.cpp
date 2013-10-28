@@ -46,11 +46,11 @@ void Player::performAction(string verb, string noun)
             {
                 found = true;
                 status = (walker -> data)->take(currentLocation()->listItem(),inventory());
-                /*
-                append (inventory, (walker -> data)); // Adds item to player inventory.
-                removeNth ((currentLocation -> itemList), i); // Removes item from room item list.
-                */
+                int newNum = currentLocation() -> numItem();
+                newNum --;
+                currentLocation() -> numItem(newNum);
             }
+            walker = walker -> next;
         }
         walker = NULL;
         if (found){
@@ -65,7 +65,7 @@ void Player::performAction(string verb, string noun)
     
     // drop function
     
-    if (verb == "DROP")
+    else if (verb == "DROP")
     {
         bool found = false;
 		bool status = false;
@@ -76,7 +76,11 @@ void Player::performAction(string verb, string noun)
             {
                 found = true;
                 status = (walker -> data)->drop(currentLocation()->listItem(),inventory());
+                int newNum = currentLocation() -> numItem();
+                newNum++;
+                currentLocation() -> numItem(newNum);
             }
+            walker = walker -> next;
         }
         walker = NULL;
         if (found){
@@ -91,7 +95,7 @@ void Player::performAction(string verb, string noun)
 
     // observe function
 
-    if (verb == "OBSERVE" || verb == "READ" || verb == "LOOK")
+    else if (verb == "OBSERVE" || verb == "READ" || verb == "LOOK")
     {
         bool found = false;
         bool status = false;
@@ -104,6 +108,7 @@ void Player::performAction(string verb, string noun)
                 status = (walker -> data)->observe();
                 break;
             }
+            walker = walker -> next;
         }
         walker = NULL;
         if (found){
@@ -115,7 +120,7 @@ void Player::performAction(string verb, string noun)
     }
   
     //move function
-    if (verb == "MOVE" || verb == "GO")
+    else if (verb == "MOVE" || verb == "GO")
     {
         bool moved=false;
         for (int i=0; i<currentLocation()->numNeighbour(); i++) {
@@ -124,6 +129,7 @@ void Player::performAction(string verb, string noun)
                 moved=true;
             }
         }
+
         if (moved==false) {
             cout<< "you can not move"<<endl;
         }
