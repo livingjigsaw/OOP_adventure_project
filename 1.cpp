@@ -1,8 +1,6 @@
 #include <iostream>
 #include "1.h"
 
-
-
 //Room functions begin here.
 Room::Room(string n, int numI, List<Item*>* nodeItem, string SD, string LD, string* mC, Room** mD, int numN){
     roomName=n;
@@ -92,15 +90,27 @@ void Player::performAction(string verb, string noun)
             cout << "You don't have" << noun << " here." << endl;
     }
 
-}
+    // observe function
 
-//Item functions begin here.
-/*
-bool InventoryItem::take(List<Item*>* roomInventory, List<Item*>* charInventory, int x)
-{
-    append (charInventory, this);
-    removeNth (roomInventory, x);
-    return true;
+    if (verb == "OBSERVE" || verb == "READ" || verb == "LOOK")
+    {
+        bool found = false;
+        bool status = false;
+        Node<Item*>* walker = inventory() -> head;    
+        for (int i = 0; i < getSize(*inventory()); i++)
+        {
+            if (((walker -> data)->name()) == noun)
+            {
+                found = true;
+                status = (walker -> data)->observe();
+            }
+        }
+        walker = NULL;
+        if (found){
+            if (status)
+                cout << endl;
+        }
+        else 
+            cout << "You don't have a " << noun << " with you." << endl; 
+    }
 }
-MEGA FAIL
-*/

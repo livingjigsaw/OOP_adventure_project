@@ -19,6 +19,7 @@ void toUpper(string& in){
 int main(){
 	cout << "debug1"<<endl;
 	InventoryItem Journal("JOURNAL");
+	Journal.description("A small notebook with writing in it. There are some references to cakes and lies.");
 	cout << "debug2\n";
 	InventoryItem PocketKnife("POCKETKNIFE");
 	InventoryItem Clock("ALARMCLOCK");
@@ -83,7 +84,7 @@ int main(){
 			noun = verb;
 			verb = "";
 		}
-		if (noun == "Quit" || noun == "QUIT")
+		if (noun == "QUIT")
 			break;
 		if (ss.rdbuf()->in_avail() != 0) // Check if there're any words left in buffer, if there are, then user input was more than 2 words.
 		{

@@ -97,7 +97,6 @@ public:
 	bool changeEnv(List<Item*>* roomInventory); //defined for environmental items	//takes name of item that meets condition; check itemState() from item; removes itself from room if met. 
 };
 
-
 class Room{
 public:
 	Room(string n, int numI, List<Item*>* nodeItem, string SD, string LD, string* mC, Room** mD, int numN);
@@ -152,4 +151,3 @@ private:
 	List<Item*>* playerItems;
 	Room* location;
 };
-
