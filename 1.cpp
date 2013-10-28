@@ -12,6 +12,7 @@ Room::Room(string n, int numI, List* nodeItem, string SD, string LD, string* mC,
     numNeighbours=numN;
 }
 
+
 Room* Room::destLookup(string command)
 {
     for (int i=numNeighbours; i>0; i--) {
@@ -116,12 +117,18 @@ void Player::performAction(string verb, string noun)
     //move function
     if (verb == "MOVE" || verb == "GO")
     {
+        bool moved=false;
         for (int i=0; i<currentLocation()->numNeighbour(); i++) {
             if (*(currentLocation()->moveCommand()+i)==noun) {
                 currentLocation(*(currentLocation()->moveDest()+i));
+                moved=true;
             }
         }
-        cout << "You cannot move to" << noun << endl;
+        if (moved==false) {
+            cout<< "you can not move"<<endl;
+        }
+        else
+            cout <<"you have moved" <<endl;
     }
 
 }

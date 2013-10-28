@@ -34,6 +34,7 @@ protected:
 	// Parallel arrays which corresponds to where a player can move.
 	string* moveCommands; //What user types. 
 	Room** moveDests; //Where user goes.
+    
 };
 
 class Player{

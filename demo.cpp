@@ -74,8 +74,12 @@ int main(){
 	Room SecondRoom(n2, 3, &secondRList ,SD2,LD2, secondRMC,secondRMD, 1);
     //Constructing the first room.
     
-    
-    
+    cout<<firstRMD[0]<<endl;
+    firstRMC[0]="NORTH";
+    firstRMD[0]=&SecondRoom;
+    cout<<firstRMD[0]<<endl;
+    secondRMC[0]="SOUTH";
+    secondRMD[0]=&FirstRoom;
 	
 	Player Player1(&FirstRoom);
 	cout<<"debug11\n";
