@@ -112,4 +112,16 @@ void Player::performAction(string verb, string noun)
         else 
             cout << "You don't have a " << noun << " with you." << endl; 
     }
+    
+    //move function
+    if (verb == "MOVE" || verb == "GO")
+    {
+        for (int i=numNeighbour(); i>0; i--) {
+            if (moveCommand[i]==noun) {
+                currentLocation()=moveDests[i];
+            }
+        }
+        cout << "You cannot move to" << noun << endl;
+    }
+
 }
