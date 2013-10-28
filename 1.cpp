@@ -129,12 +129,12 @@ void Player::performAction(string verb, string noun)
                 moved=true;
             }
         }
-
+        
         if (moved==false) {
-            cout<< "you can not move"<<endl;
+            cout<< "you can not move " << noun <<endl;
         }
         else
-            cout <<"you have moved" <<endl;
+            cout <<"you have moved " << noun<< endl;
     }
-
+    
 }
