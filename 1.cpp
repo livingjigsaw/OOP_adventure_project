@@ -116,9 +116,9 @@ void Player::performAction(string verb, string noun)
     //move function
     if (verb == "MOVE" || verb == "GO")
     {
-        for (int i=numNeighbour(); i>0; i--) {
-            if (moveCommand[i]==noun) {
-                currentLocation()=moveDests[i];
+        for (int i=0; i<currentLocation()->numNeighbour(); i++) {
+            if (*(currentLocation()->moveCommand()+i)==noun) {
+                currentLocation(*(currentLocation()->moveDest()+i));
             }
         }
         cout << "You cannot move to" << noun << endl;
