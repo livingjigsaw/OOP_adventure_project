@@ -49,6 +49,7 @@ void Player::performAction(string verb, string noun)
                 newNum --;
                 currentLocation() -> numItem(newNum);
             }
+            walker = walker -> next;
         }
         walker = NULL;
         if (found){
@@ -78,6 +79,7 @@ void Player::performAction(string verb, string noun)
                 newNum++;
                 currentLocation() -> numItem(newNum);
             }
+            walker = walker -> next;
         }
         walker = NULL;
         if (found){
@@ -105,6 +107,7 @@ void Player::performAction(string verb, string noun)
                 status = (walker -> data)->observe();
                 break;
             }
+            walker = walker -> next;
         }
         walker = NULL;
         if (found){
