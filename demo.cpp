@@ -18,14 +18,13 @@ void toUpper(string& in){
 
 int main(){
 	cout << "debug1"<<endl;
-	InventoryItem Journal("JOURNAL");
-	Journal.description("A small notebook with writing in it. There are some references to cakes and lies.");
+	InventoryItem Journal("JOURNAL", "A small notebook with writing in it. There are some references to cakes and lies.");
 	cout << "debug2\n";
-	InventoryItem PocketKnife("POCKETKNIFE");
-	InventoryItem Clock("ALARMCLOCK");
-	InventoryItem Painting("PAINTING");
+	InventoryItem PocketKnife("POCKETKNIFE", "A small knife. Slightly rusted but otherwise sharp.");
+	InventoryItem Clock("ALARMCLOCK", "Permanently stuck at 3:16.");
+	InventoryItem Painting("PAINTING", "A picture of a bearded man whose eyes seems to follow you wherever you move in the room.");
 //	InventoryItem Hatch("Hatch");
-	InventoryItem Flashlight("FLASHLIGHT");
+	InventoryItem Flashlight("FLASHLIGHT", "Small, yet emits a powerful beam.");
 	//Item Darkness("Darkness");
 //	Item GeneratorSwitch("GeneratorSwitch");
 //	Item OrbButton("OrbButton");
@@ -35,9 +34,9 @@ int main(){
 	List firstRList;// First room's item list.
 		cout << "debug4\n"; //*********current final success**********
 //		initialize(firstRList); //herpaderp the list has no constructor
-	firstRList.append((Item*)&Journal);
-	cout << "debug5\n";
 	firstRList.append((Item*)&PocketKnife);
+	cout << "debug5\n";
+	firstRList.append((Item*)&Journal);
 	cout << "debug6\n";
 	firstRList.append((Item*)&Clock);
 	cout << "debug7\n";

@@ -20,7 +20,7 @@ protected:
 	string info; //added to description that displays after a room's description	
 public:
 	Item(){};
-	Item(string n){name(n);};
+	Item(string n, string descript){name(n); description(descript);};
 	virtual ~Item(){};
 	
 	//getters
@@ -66,7 +66,7 @@ public:
 class InventoryItem: public Item{
 public:
 	InventoryItem(){};
-	InventoryItem(string in){name(in);};
+	InventoryItem(string in, string descript){name(in);description(descript);};
 	~InventoryItem(){};
 
 	// unique inherited functions
@@ -95,7 +95,7 @@ protected:
 	bool status; //this affects the appropriate environment variable
 public:
 	StatusItem(){};
-	StatusItem(string in){name(in);};
+	StatusItem(string in, string descript){name(in); description(descript);};
 	~StatusItem(){};
 	//getter
 	bool itemState(){return status;};
