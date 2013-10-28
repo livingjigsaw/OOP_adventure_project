@@ -31,6 +31,7 @@ int main(){
 //	Item OrbButton("OrbButton");
 //	Item Orb("Orb");
 		cout << "debug3\n";
+    // first Room
 	List firstRList;// First room's item list.
 		cout << "debug4\n"; //*********current final success**********
 //		initialize(firstRList); //herpaderp the list has no constructor
@@ -49,7 +50,33 @@ int main(){
     string SD="A small, generic room with basic living necessities. There is one door to the north.";
     string LD="You are on a stiff bed in a small, generic room with basic living necessities. The room seems old, partially ruined. There is one door, in an arbitrary direction that will be designated as north.";
 	Room FirstRoom(n, 3, &firstRList ,SD ,LD, firstRMC,firstRMD, 1); //Constructing the first room.
-	cout<<"debug10\n";
+    cout<<"debug10\n";
+    
+    
+    
+    //second Room
+    List secondRList;// second room's item list.
+    cout << "debug42\n"; //*********current final success**********
+    //		initialize(firstRList); //herpaderp the list has no constructor
+	secondRList.append((Item*)&Journal);
+	cout << "debug52\n";
+	secondRList.append((Item*)&PocketKnife);
+	cout << "debug62\n";
+	secondRList.append((Item*)&Clock);
+	cout << "debug72\n";
+	secondRList.append((Item*)&Painting);
+	cout << "debug82\n";
+	string* secondRMC = new string [1]; // second room's move command.
+	Room** secondRMD =new Room*[1]; secondRMD[0]=NULL; // second room's move
+    string n2="Secondroom";
+    string SD2="A large, mess room with basic living necessities. There is one door to the south.";
+    string LD2="You walk into a large, mess room with basic living necessities. The room seems new, empty. There is one door, in an arbitrary direction that will be designated as south.";
+	Room SecondRoom(n2, 3, &secondRList ,SD2,LD2, secondRMC,secondRMD, 1);
+    //Constructing the first room.
+    
+    
+    
+	
 	Player Player1(&FirstRoom);
 	cout<<"debug11\n";
 	char check1;
