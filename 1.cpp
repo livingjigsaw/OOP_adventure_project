@@ -112,7 +112,7 @@ void Player::performAction(string verb, string noun)
         else 
             cout << "You don't have a " << noun << " with you." << endl; 
     }
-    
+  
     //move function
     if (verb == "MOVE" || verb == "GO")
     {
