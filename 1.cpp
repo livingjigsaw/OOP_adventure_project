@@ -1,8 +1,7 @@
 #include <iostream>
-#include "1.h"
-
+#include "room.h"
 //Room functions begin here.
-Room::Room(string n, int numI, List<Item*>* nodeItem, string SD, string LD, string* mC, Room** mD, int numN){
+Room::Room(string n, int numI, List* nodeItem, string SD, string LD, string* mC, Room** mD, int numN){
     roomName=n;
     numItems=numI;
     itemList = nodeItem;
@@ -28,8 +27,7 @@ Player::Player(Room* l)
 {
     location = l;
     isDead = false;
-	List<Item*>* start=new List<Item*>;
-	initialize(*start);
+	List* start=new List;
 	inventory(start);
 }
 
@@ -40,8 +38,8 @@ void Player::performAction(string verb, string noun)
     {
         bool found = false;
 		bool status = false;
-        Node<Item*>* walker = (currentLocation() -> listItem()) -> head;    
-        for (int i = 0; i < getSize(*(currentLocation()) -> listItem()); i++)
+        Node* walker = (currentLocation() -> listItem()) -> getHead();    
+        for (int i = 0; i < ((currentLocation()) -> listItem()) -> getSize(); i++)
         {
             if (((walker -> data)->name()) == noun)
             {
@@ -70,8 +68,8 @@ void Player::performAction(string verb, string noun)
     {
         bool found = false;
 		bool status = false;
-        Node<Item*>* walker = inventory() -> head;    
-        for (int i = 0; i < getSize(*inventory()); i++)
+        Node* walker = inventory() -> getHead();    
+        for (int i = 0; i < inventory() -> getSize(); i++)
         {
             if (((walker -> data)->name()) == noun)
             {
@@ -96,8 +94,8 @@ void Player::performAction(string verb, string noun)
     {
         bool found = false;
         bool status = false;
-        Node<Item*>* walker = inventory() -> head;    
-        for (int i = 0; i < getSize(*inventory()); i++)
+        Node* walker = inventory() -> getHead();    
+        for (int i = 0; i < inventory() -> getSize(); i++)
         {
             if (((walker -> data)->name()) == noun)
             {

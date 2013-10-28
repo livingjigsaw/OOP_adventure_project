@@ -1,6 +1,7 @@
 #include <iostream>
-#include "stack.h"
-#include "p2list4.h"
+//#include "stack.h"
+//#include "ListObject.h"
+//#include "p2list4.h"
 using namespace std;
 
 /*
@@ -12,8 +13,7 @@ private:
 	int points; // Counter to keep track of points
 };
 */
-
-
+class List;
 class Item{
 protected:
 	string itemName;
@@ -32,15 +32,35 @@ public:
 	void description(string in){info=in;};
 	
 	//for inheritance
-	virtual bool eat(List<Item*>* charInventory){charInventory=charInventory; return 0;}; //no-ops to avoid compiler errors, needs parameters so child classes properly inherit
+	virtual bool eat(List* charInventory){charInventory=charInventory; return 0;}; //no-ops to avoid compiler errors, needs parameters so child classes properly inherit
 //	virtual bool throwItem(){return 0;}; not needed in demo
-	virtual bool drop(List<Item*>* roomInventory, List<Item*>* charInventory){charInventory=charInventory;roomInventory=roomInventory;return 0;};
-	virtual bool take(List<Item*>* roomInventory, List<Item*>* charInventory){charInventory=charInventory;roomInventory=roomInventory;return 0;};
+	virtual bool drop(List* roomInventory, List* charInventory){charInventory=charInventory;roomInventory=roomInventory;return 0;};
+	virtual bool take(List* roomInventory, List* charInventory){charInventory=charInventory;roomInventory=roomInventory;return 0;};
 //	virtual bool attack(){return 0;}; not needed in demo
 //	needed??	virtual bool changeStatus(string search, List* charInventory){search=search; charInventory=charInventory;return 0;};		//for status items, changes their state for interacting with each other
-	virtual bool changeEnv(List<Item*>* roomInventory){roomInventory=roomInventory;return 0;}; //defined for environmental items
+	virtual bool changeEnv(List* roomInventory){roomInventory=roomInventory;return 0;}; //defined for environmental items
 	virtual bool observe(){return 0;}; //read a journal, look at details of object; get description.
 
+};
+
+struct Node{
+	Item* data;
+	Node* next;
+	Node* prev;
+};
+
+class List{
+private:
+	Node* head;
+public:
+	List();
+	~List();
+	Node* getHead(){return head;};
+	bool isEmpty();
+	void append (Item* value);
+	int find (Item* value);
+	int getSize();
+	void removeNth(int n);
 };
 
 class InventoryItem: public Item{
@@ -50,8 +70,8 @@ public:
 	~InventoryItem(){};
 
 	// unique inherited functions
-	bool take(List<Item*>* roomInventory, List<Item*>* charInventory);
-	bool drop(List<Item*>* roomInventory, List<Item*>* charInventory);
+	bool take(List* roomInventory, List* charInventory);
+	bool drop(List* roomInventory, List* charInventory);
 	bool observe();
 	
 };
@@ -94,60 +114,5 @@ public:
 	string requiredItem(){return requirement;};
 	//setters
 	void requiredItem(string in){requirement=in;};
-	bool changeEnv(List<Item*>* roomInventory); //defined for environmental items	//takes name of item that meets condition; check itemState() from item; removes itself from room if met. 
-};
-
-class Room{
-public:
-	Room(string n, int numI, List<Item*>* nodeItem, string SD, string LD, string* mC, Room** mD, int numN);
-	~Room(){};
-	
-	string name()const{return roomName;}; //getter
-	string shortDescript() const{return shortDes;}; //getter
-	string longDescript()const{return longDes;}; //getter
-	int numItem() const{return numItems;}; //getter
-	int numNeighbour() const{return numNeighbours;}; //getter
-	List<Item*>* listItem()const{return itemList;}; //getter
-	string* moveCommand()const{return moveCommands;}; //getter
-	Room** moveDest()const{return moveDests;}; //getter
-	
-	void name(string n){roomName=n;}; //setter
-	void shortDescript(string newSD){shortDes=newSD;}; //setter
-	void longDescript(string newLD){longDes=newLD;}; //setter
-	void numItem(int x){numItems=x;};//setter
-    void numNeighbour(int x){numNeighbours=x;};//setter
-    void  listItem(List<Item*>* n){itemList=n;}; //setter
-    void  moveCommand(string* n){moveCommands=n;}; //setter
-    void  moveDest(Room** mD){moveDests = mD;}; //setter
-    
-	Room* destLookup(string command); //Look up destinaton based on command.
-
-protected:
-	string roomName;
-	int numItems;
-    int numNeighbours;
-	List<Item*>* itemList;
-	string shortDes; //Short description of room.
-	string longDes; //Long description of room. for use with "look" command
-	// Parallel arrays which corresponds to where a player can move.
-	string* moveCommands; //What user types. 
-	Room** moveDests; //Where user goes.
-};
-
-class Player{
-public:
-	Player(Room* l);
-	~Player(){};
-	Room* currentLocation(){return location;}; //getters
-	List<Item*>* inventory(){return playerItems;};
-	
-	void currentLocation(Room* newLocation){location = newLocation;}; //setters
-	void inventory(List<Item*>* in){playerItems=in;};
-	
-	void performAction(string verb, string noun);
-
-private:
-	bool isDead; //Ends game if player is dead. 
-	List<Item*>* playerItems;
-	Room* location;
+	bool changeEnv(List* roomInventory); //defined for environmental items	//takes name of item that meets condition; check itemState() from item; removes itself from room if met. 
 };

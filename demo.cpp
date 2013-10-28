@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 #include <sstream>
-#include "1.h"
+#include "room.h"
 using namespace std;
 
 void toUpper(string& in){
@@ -31,16 +31,16 @@ int main(){
 //	Item OrbButton("OrbButton");
 //	Item Orb("Orb");
 		cout << "debug3\n";
-	List<Item*> firstRList;// First room's item list.
+	List firstRList;// First room's item list.
 		cout << "debug4\n"; //*********current final success**********
-		initialize(firstRList); //herpaderp the list has no constructor
-	append(firstRList, (Item*)&Journal);
+//		initialize(firstRList); //herpaderp the list has no constructor
+	firstRList.append((Item*)&Journal);
 	cout << "debug5\n";
-	append(firstRList, (Item*)&PocketKnife);
+	firstRList.append((Item*)&PocketKnife);
 	cout << "debug6\n";
-	append(firstRList, (Item*)&Clock);
+	firstRList.append((Item*)&Clock);
 	cout << "debug7\n";
-	append(firstRList, (Item*)&Painting);
+	firstRList.append((Item*)&Painting);
 	cout << "debug8\n";
 	string* firstRMC = new string [1]; // First room's move command.
 	Room** firstRMD =new Room*[1]; firstRMD[0]=NULL; // First room's move destination. URGENT! THIS ONLY WORKS AFTER THE SECOND ROOM HAS BEEN CONSTRUCTED.

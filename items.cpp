@@ -1,21 +1,21 @@
-#include"1.h"
+#include "room.h"
 
 // items implmentation
 using namespace std;
 
-bool InventoryItem::take(List<Item*>* roomInventory, List<Item*>* charInventory){
+bool InventoryItem::take(List* roomInventory, List* charInventory){
 	InventoryItem* now = this;
-	append(*charInventory, (Item*)now);
-	int location = find(*roomInventory, (Item*)now);
-	removeNth(*roomInventory, location);
+	charInventory -> append((Item*)now);
+	int location = roomInventory -> find((Item*)now);
+	roomInventory -> removeNth(location);
 	return 1;
 }
 	
-bool InventoryItem::drop(List<Item*>* roomInventory, List<Item*>* charInventory){
+bool InventoryItem::drop(List* roomInventory, List* charInventory){
 	InventoryItem* now = this;
-	append(*roomInventory,(Item*)now);
-	int location = find(*charInventory, (Item*)now);
-	removeNth(*charInventory, location);
+	roomInventory -> append((Item*)now);
+	int location = charInventory -> find((Item*)now);
+	charInventory -> removeNth(location);
 	return 1;
 }
 
@@ -31,9 +31,9 @@ bool InventoryItem::observe(){
 	return 1;
 }*/
 
-bool EnvironmentItem::changeEnv(List<Item*>* roomInventory){	//searching should be done by handling function;
+bool EnvironmentItem::changeEnv(List* roomInventory){	//searching should be done by handling function;
 	EnvironmentItem* now=this;
-	int location = find(*roomInventory,(Item*)now);
-	removeNth(*roomInventory, location);
+	int location = roomInventory -> find((Item*)now);
+	roomInventory -> removeNth(location);
 	return 1;
 }
