@@ -131,10 +131,18 @@ void Player::performAction(string verb, string noun)
         }
         
         if (moved==false) {
-            cout<< "you can not move " << noun <<endl;
+            cout<< "You can not move " << noun << endl;
         }
         else
-            cout <<"you have moved " << noun<< endl;
+        {
+            cout <<"You have moved " << noun << endl << endl;
+            cout << currentLocation() -> longDescript() << endl;
+        }
+
     }
     
+    else
+    {
+        cout << "I'm sorry, I don't understand that." << endl;
+    }
 }
