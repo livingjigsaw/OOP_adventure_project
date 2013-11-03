@@ -1,0 +1,97 @@
+ROOM 1
+
+You wake up. You are on a stiff bed in a small, generic room 
+with basic living necessities. The room seems old, partially ruined.
+there is one door, in an arbitrary direction that will be designated as north.
+
+There is a clock, a painting, a pocketknife, and a notebook in the room."
+
+Behind the painting is a button that clicks, but nothing noticeable happens. (Opens a compartment in a later room).
+the notebook hold furiously scratched notes about cake, fire, and lies. and a cute drawing of a 
+cube with a heart on it.
+
+ROOM 2 (North of ROOM 1)
+Through the door is an old, empty facility with walls that have collected years of dust
+no lights are on, but there seems to be sunlight coming in from the roof.
+
+In the center of this large room is a room with large windows, glass doors, and antennas (ROOM 3)
+to the east is a wooden door. (ROOM 4)
+to the west is a massive metal hatch in the wall, obviously sealed shut and locked, with lots of warning lights
+that have no power.
+
+if someone says "hatch", there is a slot that looks like it can recieve a spherical object, and that it has a 
+very reflective surface on it, somehow void of the dust that cover this place
+
+ROOM 3 (WITHIN ROOM 2)
+in the glass room, there is a large array of switches and controls, all out of power
+there is a flashlight there, as well as a first aid kit
+
+ROOM 4 (EAST OF ROOM 2)
+through the wooden door, is a pitch black room.
+turn on the flashlight, and you see the words (auxillary power) written on the wall
+
+There is a machine with the word generator on the wall behind it, as well as a switch in the on position,
+but it doesn't make connection(the pocketknife can be jammed there to establish connetion, but 
+electrocutes the player if not in off position) so yes, someone can die in the demo TROLLOLOLZ  
+
+the warning light to the right of the hatch rotates annoyingly. the one on the left seems to have burnt out and 
+there is now glass on the ground.
+
+returning to the glass room (ROOM 3), none of the switches are on, but there is one blinking red light and a button that says
+"receive signal"
+
+press it, and you hear a loud, metallic clang on the floor behind you
+
+there is a metallic orb on the ground, very metllic and shiny, perfectly smooth except for four indentations,
+placed symmetrically around the orb. (not seen by player, this thing holds four gems
+distributed thoughout the game, and will open the ending when in the right
+room with all four gems in the ball)
+
+pick it up.
+
+and you are instantly teleported into a new place (ROOM 5)
+
+ROOM 5 (After Teleportation from ROOM 4)
+You stand in a bare abandoned laboratory, still clutching the orb. The smell of electricity is in the air as you step down from a raised platform in the middle of the room. 
+You see a single door to the west (ROOM 6) but realize it is locked electronically, requiring a palm scan to unlock it.
+(If player pressed button) - You see an open compartment with what looks like a dart gun (DARTGUN) in it. (Not required to finish game).
+
+If you try to go west, you try to scan your palm, and surprisingly, you hear a short BEEP and the door slides open.
+
+ROOM 6 (WEST OF ROOM 5)
+You are in a hallway. There are doors to the east (ROOM 5), north (ROOM 7) and south (Can't enter, door is barricaded).
+There are signs above each of the doors but two of them are so rusted you can't make out a word.
+The sign over the south door shows "STAIRWELL".
+In what you hope is red paint, you see the words "GET DOWNSTAIRS IF YOU STILL CAN." scrawled in large letters across a wall.
+You hear dripping in the distance.
+
+ROOM 7 (NORTH OF ROOM 6)
+You enter into a spacious hall. There are long tables with benches on either side on them along the sides of the room.
+Judging by the layout of the room, you conclude that it used to be a cafeteria of some sort. A smell of decay fills your nose and make you feel slightly nauseous.
+There is a counter near the back of the room with boxes of food. Most are empty, but you see a chocolate bar (CHOCOLATE) as well as a bottle something called ZipFizz (ZIPFIZZ).
+To the south is a door leading back to the hallway (ROOM 6)
+To the east is a small door leading to what is presumably a restroom. (ROOM 8)
+To the north is another door with a palm scanner (ROOM 9)
+The sound of dripping is louder here, with a slight sizzle after each drip.
+If you try to scan:
+Again, the door opens for you, after scanning your hand.
+
+ROOM 8 - RESTROOM (EAST OF ROOM 7)
+A door to the west leads back to the cafeteria (ROOM 7)
+You have found the source of the smell. In the restroom, two unidentifiable dead bodies slump against a wall. 
+Their bodies are covered with bite marks, and their limbs look as if they were torn off.
+One of the bodies wears a lab coat, in his hands he cradles a device (DEVICE), his last act seemed to be protecting the device.
+The other body is even more mangled, but you conclude that he was a janitor based on the ring of keys(JANITORKEYS) he has looped on around his belt.
+
+ROOM 9 (NORTH OF ROOM 7)
+You walk into the room and right on to the edge of a gaping hole.
+You have found the source of the dripping sounds:
+A giant vat of what is presumably strong acid lies partially smashed on one end of the room. After an indeterminable time, the acid has corroded into the ground.
+Acid continues to drip on to the floor below, sizzling as it comes into contact with the tiled floor. 
+Once your eyes adjusted to the low light, you see a blue glint on the other side of the room; it seems the acid had also destroyed part of a safe.
+However, you can't reach the safe because of the huge hole in the middle of the room.
+A door to the south leads back to the cafeteria (ROOM 7).
+You can climb down the hole to the floor below, but you won't be able to return. (ROOM 10)
+If the player chooses to USE metallic orb, the blue gem (sapphire) would be attracted to the orb. 
+It flies across the room and embeds itself on one of the indentations of the orb.
+
