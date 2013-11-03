@@ -36,7 +36,7 @@ public:
 	
 	//for inheritance
 	virtual bool eat(List* charInventory){charInventory=charInventory; return 0;}; //no-ops to avoid compiler errors, needs parameters so child classes properly inherit
-	virtual bool use(){return 0;};
+	virtual bool use(List* roomInventory, string& target){return 0;};
 //	virtual bool throwItem(){return 0;}; not needed in demo
 	virtual bool drop(List* roomInventory, List* charInventory){charInventory=charInventory;roomInventory=roomInventory;return 0;};
 	virtual bool take(List* roomInventory, List* charInventory){charInventory=charInventory;roomInventory=roomInventory;return 0;};
@@ -63,6 +63,7 @@ public:
 	bool isEmpty();
 	void append (Item* value);
 	int find (Item* value);
+	Item* findByName(string value);
 	Item* findByCondition(string value);
 	int getSize();
 	void removeNth(int n);
@@ -77,7 +78,7 @@ public:
 	// unique inherited functions
 	bool take(List* roomInventory, List* charInventory);
 	bool drop(List* roomInventory, List* charInventory);
-	bool use(List* roomInventory);
+	bool use(List* roomInventory, string& target);
 	bool observe();
 	
 };

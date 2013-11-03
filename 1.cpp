@@ -141,6 +141,20 @@ void Player::performAction(string verb, string noun)
 
     }
     
+	else if(verb=="USE"){
+		Item* wanted = inventory()->findByName(noun); //this is the item we are looking for
+ 		if(wanted==NULL)
+			cout << "You have no " << noun <<" in your inventory\n";
+		else{
+			string target = "";
+			bool itWorked = wanted->use(currentLocation()->listItem(), target);
+			if(itWorked)
+				cout << "You used " << noun << " on " << target<<".\n";
+			else
+				cout << "You cannot use " << noun << " here. \n";
+		}
+	}
+	
     else
     {
         cout << "I'm sorry, I don't understand that." << endl;

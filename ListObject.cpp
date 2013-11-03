@@ -56,10 +56,27 @@ int List::find(Item* value){
     return count;
 }
 
+Item* List::findByName(string value){
+    Node* walker=head;
+    if (head==NULL) {
+        return NULL;
+    }
+    while (walker!=NULL) {
+        if (walker->data->name()==value) {
+            break;
+        }
+        if (walker->next==NULL) {
+            return NULL;
+        }
+        walker=walker->next;
+    }
+    return walker->data;
+}
+
 Item* List::findByCondition(string value){
     Node* walker=head;
     if (head==NULL) {
-        return 0;
+        return NULL;
     }
     while (walker!=NULL) {
         if (walker->data->requiredItem()==value) {
