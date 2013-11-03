@@ -17,40 +17,30 @@ void toUpper(string& in){
 
 
 int main(){
-	cout << "debug1"<<endl;
 	InventoryItem Journal("JOURNAL", "A small notebook with writing in it. There are some references to cakes and lies.");
-	cout << "debug2\n";
 	InventoryItem PocketKnife("POCKETKNIFE", "A small knife. Slightly rusted but otherwise sharp.");
 	InventoryItem Clock("ALARMCLOCK", "Permanently stuck at 3:16.");
 	InventoryItem Painting("PAINTING", "A picture of a bearded man whose eyes seems to follow you wherever you move in the room.");
-//	InventoryItem Hatch("Hatch");
+	EnvironmentItem Hatch("Hatch", "orb");
 	InventoryItem Flashlight("FLASHLIGHT", "Small, yet emits a powerful beam.");
 	//Item Darkness("Darkness");
 //	Item GeneratorSwitch("GeneratorSwitch");
 //	Item OrbButton("OrbButton");
 //	Item Orb("Orb");
-		cout << "debug3\n";
     // first Room
 	List firstRList;// First room's item list.
-		cout << "debug4\n"; //*********current final success**********
 //		initialize(firstRList); //herpaderp the list has no constructor
 	firstRList.append((Item*)&PocketKnife);
-	cout << "debug5\n";
 	firstRList.append((Item*)&Journal);
-	cout << "debug6\n";
 	firstRList.append((Item*)&Clock);
-	cout << "debug7\n";
 	firstRList.append((Item*)&Painting);
-	cout << "debug8\n";
 	string* firstRMC = new string [1]; // First room's move command.
 	Room** firstRMD =new Room*[1]; firstRMD[0]=NULL; // First room's move destination. URGENT! THIS ONLY WORKS AFTER THE SECOND ROOM HAS BEEN CONSTRUCTED.
-	cout<<"debug9\n";
    string n="Firstroom";
     string SD="A small, generic room with basic living necessities. There is one door to the north.";
     string LD="You are on a stiff bed in a small, generic room with basic living necessities. The room seems old, partially ruined. There is one door, in an arbitrary direction that will be designated as north.";
 	Room FirstRoom(n, 3, &firstRList ,SD ,LD, firstRMC,firstRMD, 1); //Constructing the first room.
-    cout<<"debug10\n";
-    
+
     
     
     //second Room

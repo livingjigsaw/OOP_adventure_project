@@ -109,6 +109,7 @@ protected:
 		
 public:
 	EnvironmentItem(){};
+	EnvironmentItem(string n, string r){name(n); requirement=r;};
 	~EnvironmentItem(){};
 	//getter
 	string requiredItem(){return requirement;};
