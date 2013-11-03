@@ -24,6 +24,16 @@ bool InventoryItem::observe(){
 	return 1;
 }
 
+bool InventoryItem::use(List* roomInventory){
+	InventoryItem* now = this;
+	Item* match = roomInventory->findByCondition(now->name());
+	if (match==NULL)
+		return 0;
+	else
+		match->currentState(1); //changes environmental var state, for the description loader
+		return 1;
+}
+
 /*bool EdibleItem::eat(List<Item*>* charInventory){
 	EdibleItem* now = this;
 	int location = find(*charInventory,(Item*)now);
