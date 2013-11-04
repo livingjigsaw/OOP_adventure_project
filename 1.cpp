@@ -48,7 +48,7 @@ string Player::getDescription(string command, string object){
 void Player::performAction(string verb, string noun)
 {
 	Item* EnvBlock = currentLocation()->listItem()->findEnv();
-	if(EnvBlock!=NULL && verb==EnvBlock->verb() && noun==EnvBlock->noun()){
+	if(EnvBlock!=NULL && verb==EnvBlock->verb() && noun==EnvBlock->noun() && EnvBlock->currentState()==true){
 		cout << "The " << EnvBlock->name() << " is in the way!\n";  
 	}
     else if (verb == "TAKE")
