@@ -208,7 +208,7 @@ int main(){
 	Room NinthRoom(n9, 3, &ninthRList ,SD9,LD9, ninthRMC,ninthRMD, 1);
     //Constructing the Ninth room.
 
-    
+    //room connection
     cout<<firstRMD[0]<<endl;
     firstRMC[0]="NORTH";
     firstRMD[0]=&SecondRoom;
@@ -249,7 +249,7 @@ int main(){
     
     ninthRMC[0]="SOUTH";
     ninthRMD[0]=&SeventhRoom;
-    
+    //done with room connection
     
 
 	
