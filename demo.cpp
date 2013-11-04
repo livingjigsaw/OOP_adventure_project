@@ -46,7 +46,7 @@ int main(){
 	
 
     List secondRList;// second room's item list.
-    cout << "debug42\n"; //*********current final success**********
+    //cout << "debug42\n"; //*********current final success**********
     //		initialize(firstRList); //herpaderp the list has no constructor
 	secondRList.append((Item*)&Hatch);
 
@@ -113,7 +113,7 @@ int main(){
     
     //Seventh Room
     List seventhRList;// Seventh room's item list.
-    cout << "debug42\n"; //*********current final success**********
+    //cout << "debug42\n"; //*********current final success**********
     //		initialize(firstRList); //herpaderp the list has no constructor
 	seventhRList.append((Item*)&Hatch);
 	string* seventhRMC = new string [3]; // second room's move command.
@@ -150,10 +150,10 @@ int main(){
     //Constructing the Ninth room.
 
     //room connection
-    cout<<firstRMD[0]<<"debug1" <<endl;
+    //cout<<firstRMD[0]<<"debug1" <<endl;
     firstRMC[0]="NORTH";
     firstRMD[0]=&SecondRoom;
-    cout<<firstRMD[0]<<endl;
+    //cout<<firstRMD[0]<<endl;
     secondRMC[0]="SOUTH";
     secondRMD[0]=&FirstRoom;
     
@@ -172,22 +172,22 @@ int main(){
     
     fifthRMC[0]="WEST";
     fifthRMD[0]=&SixthRoom;
-        cout<<"\n debug A\n";
+    //    cout<<"\n debug A\n";
     sixthRMC[0]="EAST";
     sixthRMD[0]=&FifthRoom;
     sixthRMC[0]="NORTH";
     sixthRMD[0]=&SeventhRoom;
-            cout<<"\n debug B\n"; // we get here
+    //        cout<<"\n debug B\n"; // we get here
     seventhRMC[0]="SOUTH";
     seventhRMD[0]=&SixthRoom;
-	cout<<"\n debug B1\n"; // we get here
+	//cout<<"\n debug B1\n"; // we get here
     seventhRMC[1]="EAST";
     seventhRMD[1]=&EighthRoom;
-	cout<<"\n debug B2\n"; // we get here
+	//cout<<"\n debug B2\n"; // we get here
     seventhRMC[2]="NORTH";
-	cout<<"\n debug B3\n"; // we get here
+	//cout<<"\n debug B3\n"; // we get here
     seventhRMD[2]=&NinthRoom;
-            cout<<"\n debug C\n"; // but not here
+    //        cout<<"\n debug C\n"; // but not here
     eighthRMC[0]="WEST";
     eighthRMD[0]=&SeventhRoom;
 //not getting here
@@ -198,7 +198,7 @@ int main(){
 
 	
 	Player Player1(&FirstRoom);
-	cout<<"debug11\n";
+	//cout<<"debug11\n";
 	char check1;
 	bool gameOver = false;
 	cout << "Welcome to [WIP] Adventure! Do you need instructions? (Y/N)" << endl;
@@ -207,11 +207,13 @@ int main(){
 	{
 		cout << "You navigate this game purely through text instructions." << endl;
 		cout << "When prompted, please insert what you wish your character to do using commands of not more than two words (And of the form 'verb + noun')." << endl;
+		cout << "Moving is done by typing 'Go' followed by a cardinal direction. (i.e: North, South, East and West)" << endl;
 		cout << "If stuck, type 'Help' for some hints." << endl;
 		cout << endl;
 	}
 	cout << "You're in " << Player1.getDescription("", "") <<endl;
-
+	string junk;
+	getline (cin, junk);
 	while (!gameOver)
 	{
 		//File input starts here.
