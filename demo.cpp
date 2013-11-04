@@ -55,13 +55,55 @@ int main(){
 	cout << "debug72\n";
 	secondRList.append((Item*)&Painting);
 	cout << "debug82\n";
-	string* secondRMC = new string [1]; // second room's move command.
-	Room** secondRMD =new Room*[1]; secondRMD[0]=NULL; // second room's move
+	string* secondRMC = new string [3]; // second room's move command.
+	Room** secondRMD =new Room*[3]; secondRMD[0]=NULL; // second room's move
     string n2="Secondroom";
     string SD2="a large, open room that's somewhat bare. There is a glass room in the Center of this room, and a wooden door to the east, and a massive opening where the hatch once was. ";
     string LD2="Warning lights are flashing next to the massive opening, but no alarms are going off. the control room blinks many colors at off intervals";
-	Room SecondRoom(n2, 3, &secondRList ,SD2,LD2, secondRMC,secondRMD, 1);
-    //Constructing the first room.
+	Room SecondRoom(n2, 3, &secondRList ,SD2,LD2, secondRMC,secondRMD, 3);
+    //Constructing the second room.
+    
+    
+    //third Room
+    List thirdRList;// third room's item list.
+    cout << "debug42\n"; //*********current final success**********
+    //		initialize(firstRList); //herpaderp the list has no constructor
+	thirdRList.append((Item*)&Hatch);
+	cout << "debug52\n";
+	thirdRList.append((Item*)&PocketKnife);
+	cout << "debug62\n";
+	thirdRList.append((Item*)&Clock);
+	cout << "debug72\n";
+	thirdRList.append((Item*)&Painting);
+	cout << "debug82\n";
+	string* thirdRMC = new string [1]; // second room's move command.
+	Room** thirdRMD =new Room*[1]; thirdRMD[0]=NULL; // second room's move
+    string n3="Thirdroom";
+    string SD3="in the glass room, there is a large array of switches and controls, all out of power there is a flashlight there, as well as a first aid kit";
+    string LD3=" no long longDescript";
+	Room ThirdRoom(n3, 3, &thirdRList ,SD3,LD3, thirdRMC,thirdRMD, 1);
+    //Constructing the third room.
+    
+    
+    //Fourth Room
+    List fourthRList;// third room's item list.
+    cout << "debug42\n"; //*********current final success**********
+    //		initialize(firstRList); //herpaderp the list has no constructor
+	fourthRList.append((Item*)&Hatch);
+	cout << "debug52\n";
+	fourthRList.append((Item*)&PocketKnife);
+	cout << "debug62\n";
+	fourthRList.append((Item*)&Clock);
+	cout << "debug72\n";
+	fourthRList.append((Item*)&Painting);
+	cout << "debug82\n";
+	string* fourthRMC = new string [2]; // second room's move command.
+	Room** fourthRMD =new Room*[2]; fourthRMD[0]=NULL; // second room's move
+    string n4="Thirdroom";
+    string SD4="through the wooden door, is a pitch black room.";
+    string LD4=" There is a machine with the word generator on the wall behind it, as well as a switch in the on position, but it doesn't make connection(the pocketknife can be jammed there to establish connetion, but electrocutes the player if not in off position) so yes, someone can die in the demo TROLLOLOLZ ";
+	Room FourthRoom(n4, 3, &fourthRList ,SD4,LD4, fourthRMC,fourthRMD, 2);
+    //Constructing the Fourth room.
     
     cout<<firstRMD[0]<<endl;
     firstRMC[0]="NORTH";
@@ -69,6 +111,18 @@ int main(){
     cout<<firstRMD[0]<<endl;
     secondRMC[0]="SOUTH";
     secondRMD[0]=&FirstRoom;
+    
+    secondRMC[1]="INSIDE";
+    secondRMD[1]=&ThirdRoom;
+    thirdRMC[0]="OUTSIDE";
+    thirdRMD[0]=&SecondRoom;
+    
+    secondRMC[2]="EAST";
+    secondRMD[2]=&FourthRoom;
+    
+    fourthRMC[0]="WEST";
+    fourthRMD[0]=&SecondRoom;
+
 	
 	Player Player1(&FirstRoom);
 	cout<<"debug11\n";
