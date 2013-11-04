@@ -109,8 +109,10 @@ void Player::performAction(string verb, string noun)
 
     else if (verb == "OBSERVE" || verb == "READ" || verb == "LOOK")
     {
-		if(noun=="ROOM" || noun=="")
+		if(noun=="ROOM" || noun==""){
 			cout << "You're in "<<getDescription(verb, noun) <<endl;
+			cout <<"\nThere is a " << currentLocation()->listItem()->listAll() <<" in this room." << endl;
+		}
 		else{
 			bool found = false;
 			bool status = false;
@@ -152,6 +154,7 @@ void Player::performAction(string verb, string noun)
         {
             cout <<"You have moved " << noun << endl << endl;
 			cout << "You're in " << getDescription(verb, noun) <<endl;
+			cout <<"There is a " << currentLocation()->listItem()->listAll() <<" in this room." << endl;
 
         }
 

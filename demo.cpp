@@ -21,7 +21,7 @@ int main(){
 	InventoryItem PocketKnife("POCKETKNIFE", "A small, metal knife. Slightly rusted and not very sharp.");
 	InventoryItem Clock("ALARMCLOCK", "Permanently stuck at 3:16.");
 	InventoryItem Painting("PAINTING", "A picture of a bearded man whose eyes seems to follow you wherever you move in the room.");
-	EnvironmentItem Hatch("Hatch", "orb");
+	EnvironmentItem Hatch("HATCH", "orb");
 	InventoryItem Flashlight("FLASHLIGHT", "Small, yet emits a powerful beam.");
 	//Item Darkness("Darkness");
 //	Item GeneratorSwitch("GeneratorSwitch");

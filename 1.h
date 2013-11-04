@@ -68,7 +68,7 @@ public:
 	int getSize();
 	void removeNth(int n);
 	Item* findEnv();
-	
+	string listAll();
 };
 
 class InventoryItem: public Item{
