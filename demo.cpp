@@ -18,7 +18,7 @@ void toUpper(string& in){
 
 int main(){
 	InventoryItem Journal("JOURNAL", "A small notebook with writing in it. There are some references to cakes and lies.");
-	InventoryItem PocketKnife("POCKETKNIFE", "A small knife. Slightly rusted but otherwise sharp.");
+	InventoryItem PocketKnife("POCKETKNIFE", "A small, metal knife. Slightly rusted and not very sharp.");
 	InventoryItem Clock("ALARMCLOCK", "Permanently stuck at 3:16.");
 	InventoryItem Painting("PAINTING", "A picture of a bearded man whose eyes seems to follow you wherever you move in the room.");
 	EnvironmentItem Hatch("Hatch", "orb");
@@ -37,8 +37,8 @@ int main(){
 	string* firstRMC = new string [1]; // First room's move command.
 	Room** firstRMD =new Room*[1]; firstRMD[0]=NULL; // First room's move destination. URGENT! THIS ONLY WORKS AFTER THE SECOND ROOM HAS BEEN CONSTRUCTED.
    string n="Firstroom";
-    string SD="A small, generic room with basic living necessities. There is one door to the north.";
-    string LD="You are on a stiff bed in a small, generic room with basic living necessities. The room seems old, partially ruined. There is one door, in an arbitrary direction that will be designated as north.";
+    string SD="a small, generic room with basic living necessities. There is one door to the north.";
+    string LD="There's a stiff bed in a small, generic room with basic living necessities. The room seems old, partially ruined. There is one door, in an arbitrary direction that will be designated as north.";
 	Room FirstRoom(n, 3, &firstRList ,SD ,LD, firstRMC,firstRMD, 1); //Constructing the first room.
 
     
@@ -47,7 +47,7 @@ int main(){
     List secondRList;// second room's item list.
     cout << "debug42\n"; //*********current final success**********
     //		initialize(firstRList); //herpaderp the list has no constructor
-	secondRList.append((Item*)&Journal);
+	secondRList.append((Item*)&Hatch);
 	cout << "debug52\n";
 	secondRList.append((Item*)&PocketKnife);
 	cout << "debug62\n";
@@ -58,8 +58,8 @@ int main(){
 	string* secondRMC = new string [1]; // second room's move command.
 	Room** secondRMD =new Room*[1]; secondRMD[0]=NULL; // second room's move
     string n2="Secondroom";
-    string SD2="A large, mess room with basic living necessities. There is one door to the south.";
-    string LD2="You walk into a large, mess room with basic living necessities. The room seems new, empty. There is one door, in an arbitrary direction that will be designated as south.";
+    string SD2="a large, open room that's somewhat bare. There is a glass room in the Center of this room, and a wooden door to the east, and a massive opening where the hatch once was. ";
+    string LD2="Warning lights are flashing next to the massive opening, but no alarms are going off. the control room blinks many colors at off intervals";
 	Room SecondRoom(n2, 3, &secondRList ,SD2,LD2, secondRMC,secondRMD, 1);
     //Constructing the first room.
     
@@ -83,10 +83,8 @@ int main(){
 		cout << "If stuck, type 'Help' for some hints." << endl;
 		cout << endl;
 	}
-	cout << "You wake up. You are on a stiff bed in a small, generic room with basic living necessities." << endl;
-	cout << "The room seems old, partially ruined." << endl;
-	cout << "There is one door, in an arbitrary direction that will be designated as north." << endl;
-	cout << "There is a clock, a painting, a pocketknife, and a notebook in the room." << endl;
+	cout << "You're in " << Player1.getDescription("", "") <<endl;
+
 	while (!gameOver)
 	{
 		//File input starts here.
@@ -99,12 +97,13 @@ int main(){
 		ss >> noun;
 		toUpper(verb);
 		toUpper(noun);
+		cout << endl;
 		if (noun == "")
 		{
-			noun = verb;
-			verb = "";
+			//noun = verb;
+			//verb = "";
 		}
-		if (noun == "QUIT")
+		if (verb == "QUIT")
 			break;
 		if (ss.rdbuf()->in_avail() != 0) // Check if there're any words left in buffer, if there are, then user input was more than 2 words.
 		{
@@ -115,6 +114,7 @@ int main(){
 		//File input ends here.
 		Player1.performAction(verb, noun);
 		//At this point, noun and verb are how they should be, functions can use them.
-
+		cout << endl;
+	
 	}
 }

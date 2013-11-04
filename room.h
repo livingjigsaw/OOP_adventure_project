@@ -48,6 +48,7 @@ public:
 	void inventory(List* in){playerItems=in;};
 	
 	void performAction(string verb, string noun);
+	string getDescription(string command, string object);		//gets description from environment variables or room
 
 private:
 	bool isDead; //Ends game if player is dead. 

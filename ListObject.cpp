@@ -90,6 +90,22 @@ Item* List::findByCondition(string value){
     return walker->data;
 }
 
+Item* List::findEnv(){		//Env items placed in list FIRST have PRIORITY!!!
+    Node* walker=head;
+    if (head==NULL) {
+        return NULL;
+    }
+    while (walker!=NULL) {
+        if (walker->data->currentState()) {
+            break;
+        }
+        if (walker->next==NULL) {
+            return NULL;
+        }
+        walker=walker->next;
+    }
+    return walker->data;
+}
 
 int List::getSize(){
 	if (head==NULL) {

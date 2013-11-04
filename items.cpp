@@ -30,7 +30,7 @@ bool InventoryItem::use(List* roomInventory, string& target){
 	if (match==NULL)
 		return 0;
 	else
-		match->currentState(1); //changes environmental var state, for the description loader
+		match->currentState(0); //changes environmental var state TO FALSE TO MAKE IT IGNORED, for the description loader
 		target = match->name();
 		return 1;
 }

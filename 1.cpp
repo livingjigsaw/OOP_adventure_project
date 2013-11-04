@@ -32,6 +32,18 @@ Player::Player(Room* l)
 	inventory(start);
 }
 
+string Player::getDescription(string command, string object){
+		string roomDesc="";
+		Item* checker = currentLocation()->listItem()->findEnv();
+	if(checker!=NULL)
+		roomDesc=checker->description();
+	else if((command=="LOOK"||command=="OBSERVE")&&(object=="ROOM"||object==""))
+		roomDesc = currentLocation()->shortDescript() + " " + currentLocation()->longDescript();
+	else{
+		roomDesc = currentLocation()->shortDescript();
+	}
+	return roomDesc;
+}
 
 void Player::performAction(string verb, string noun)
 {
@@ -97,28 +109,31 @@ void Player::performAction(string verb, string noun)
 
     else if (verb == "OBSERVE" || verb == "READ" || verb == "LOOK")
     {
-        bool found = false;
-        bool status = false;
-        Node* walker = inventory() -> getHead();    
-        for (int i = 0; i < inventory() -> getSize(); i++)
-        {
-            if (((walker -> data)->name()) == noun)
-            {
-                found = true;
-                status = (walker -> data)->observe();
-                break;
-            }
-            walker = walker -> next;
-        }
-        walker = NULL;
-        if (found){
-            if (status)
-                cout << endl;
-        }
-        else 
-            cout << "You don't have a " << noun << " with you." << endl; 
-    }
-  
+		if(noun=="ROOM" || noun=="")
+			cout << "You're in "<<getDescription(verb, noun) <<endl;
+		else{
+			bool found = false;
+			bool status = false;
+			Node* walker = inventory() -> getHead();    
+			for (int i = 0; i < inventory() -> getSize(); i++)
+			{
+				if (((walker -> data)->name()) == noun)
+				{
+					found = true;
+					status = (walker -> data)->observe();
+					break;
+				}
+				walker = walker -> next;
+			}
+			walker = NULL;
+			if (found){
+				if (status)
+					cout << endl;
+			}
+			else 
+				cout << "You don't have a " << noun << " with you." << endl; 
+		}
+	}
     //move function
     else if (verb == "MOVE" || verb == "GO")
     {
@@ -136,7 +151,8 @@ void Player::performAction(string verb, string noun)
         else
         {
             cout <<"You have moved " << noun << endl << endl;
-            cout << currentLocation() -> longDescript() << endl;
+			cout << "You're in " << getDescription(verb, noun) <<endl;
+
         }
 
     }

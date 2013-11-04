@@ -27,7 +27,7 @@ public:
 	string name(){return itemName;};
 	string description(){return info;};
 	virtual string requiredItem(){return "";};
-	virtual bool currentState(){return 0;};
+	virtual bool currentState(){return 0;};	//NOTE: an environmental Item is active when set to 1, as in TRUE! all other items and inactive return 0
 	
 	//setters
 	void name(string in){itemName=in;};
@@ -67,6 +67,8 @@ public:
 	Item* findByCondition(string value);
 	int getSize();
 	void removeNth(int n);
+	Item* findEnv();
+	
 };
 
 class InventoryItem: public Item{
