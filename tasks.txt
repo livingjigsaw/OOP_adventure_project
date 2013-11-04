@@ -1,91 +1,31 @@
-Tasks
+current status & Tasks
+
+Updated 10:30 Nov 3rd
+
+PLEASE PLEASE PLEASE
+do these. claim them as you do them, make sure they are not already claimed.
+
+if you think of something needed, please add it below 
 -------------------------------------------------------------------------------------
-add to this list as you see fit
-but of course, don't get carried away   ;)
--------------------------------------------------------------------------------------
-Items: Items need to be able to be the following:
-	edible
-	movable/keepable
-	environmental (affects the description of the room it's in)
-	enemies?	 --a form of environmental, not needed for demo
-	throwable
-	dropable
-	openable
-	perishable?	-- not needed for demo
-	shootable? 	-- not needed for demo
-	interact (having the right key allows certain actions to be performed, probably doable through environmental items)
-	
-	
-Rooms: rooms need to:
-	be affected by environmental items
-	point to its neighbors' locations
-	short description
-	long description
-	changable? (or will change be completely handled by items?)
-	hold items
-	
+Env items description now preferred over room description while active
 
-Player: the player needs to:
-	traverse rooms
-	carry out actions (parse instructions)
-	carry items(have invntory)
-	see current inventory
-	
-	
-we need 4-5 working rooms for demo
+Move, Look, Take, and Drop are functional and tested
 
+Use, Env items, and Stat items are functional, but not tested
+TASK: build and test env and Stat items (try the orb and the hatch)
 
-rough storyboard for demo:
-"you wake up. You are on a stiff bed in a small, generic room 
-with basic living necessities. The room seems old, partially ruined.
-there is one door, in an arbitrary direction that will be designated as north.
+Items cannot currently interact with Items in other rooms
+OPTIONAL TASK: make items that can interact with items in other rooms
 
-There is a clock, a painting, a pocketknife, and a notebook in the room."
+Player cannot be teleported by item
+OPTIONAL TASK: make an item that teleports the player
+POSSIBLE SOLN: when condition met, the Env item fills instream with pre-programmed 
+	verb and noun that is a hidden move commend that is a one-way move to other room, like a teleport
 
-behind the painting is a button that does...something further down the road than the demo
-the notebook hold furiously scratched notes about cake, fire, and lies. and a cute drawing of a 
-cube with a heart on it
+TASK: Make 10-15 rooms with items, and an ending
 
-through the door is an old, empty facility with walls that have collected years of dust
-no lights are on, but there seems to be sunlight coming in from the roof
+TASK: Implement Game Over and be able to return player to one command before death.
 
-in the center of this large room is a room with large windows, glass doors, and antennas
-to the east is a wooden door
-to the west is a massive metal hatch in the wall, obviously sealed shut and locked, with lots of warning lights
-that have no power. 
+OPTIONAL TASK: implement scoring system
 
-if someone says "hatch", there is a slot that looks like it can recieve a spherical object, and that it has a 
-very reflective surface on it, somehow void of the dust that cover this place
-
-in the glass room, there is a large array of switches and controls, all out of power
-there is a flashlight there, as well as a first aid kit
-
-through the wooden door, is a pitch black room.
-turn on the flashlight, and you see the words (auxillary power) written on the wall
-
-There is a machine with the word generator on the wall behind it, as well as a switch in the on position,
-but it doesn't make connection(the pocketknife can be jammed there to establish connetion, but 
-electrocutes the player if not in off position) so yes, someone can die in the demo TROLLOLOLZ  
-
-the warning light to the right of the hatch rotates annoyingly. the one on the left seems to have burnt out and 
-there is now glass on the ground.
-
-returning to the glass room, none of the switches are on, but there is one blinking red light and a button that says
-"receive signal"
-
-press it, and you hear a loud, metallic clang on the floor behind you
-
-there is a metallic orb on the ground, very metllic and shiny, perfectly smooth except for four indentations,
-placed symmetrically around the orb. (not seen by player, this thing holds four gems
-distributed thoughout the game, and will open the ending when in the right
-room with all four gems in the ball)
-
-pick it up.
-
-and you are instantly teleported into a new place, where the demo ends!
-
-AS OF OCT 27:
-THINGS TO TEST:
-- PLAYER HAS TO MOVE BETWEEN ROOMS CORRECTLY.
-- ENVIRONMENTAL ITEMS HAVE TO AFFECT ROOMS.
-- STATUS ITEMS HAVE TO AFFECT ENVIRONMENTAL ITEMS.
+OPTIONAL TASK: implement stack for going back
