@@ -35,19 +35,23 @@ Player::Player(Room* l)
 string Player::getDescription(string command, string object){
 		string roomDesc="";
 		Item* checker = currentLocation()->listItem()->findEnv();
-	if(checker!=NULL)
-		roomDesc=checker->description();
-	else if((command=="LOOK"||command=="OBSERVE")&&(object=="ROOM"||object==""))
+	if((command=="LOOK"||command=="OBSERVE")&&(object=="ROOM"||object==""))
 		roomDesc = currentLocation()->shortDescript() + " " + currentLocation()->longDescript();
 	else{
 		roomDesc = currentLocation()->shortDescript();
 	}
+	if(checker!=NULL)
+		roomDesc+= "\n\n" + checker->description();
 	return roomDesc;
 }
 
 void Player::performAction(string verb, string noun)
 {
-    if (verb == "TAKE")
+	Item* EnvBlock = currentLocation()->listItem()->findEnv();
+	if(EnvBlock!=NULL && verb==EnvBlock->verb() && noun==EnvBlock->noun()){
+		cout << "The " << EnvBlock->name() << " is in the way!\n";  
+	}
+    else if (verb == "TAKE")
     {
         bool found = false;
 		bool status = false;

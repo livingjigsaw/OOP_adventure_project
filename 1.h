@@ -28,6 +28,8 @@ public:
 	string description(){return info;};
 	virtual string requiredItem(){return "";};
 	virtual bool currentState(){return 0;};	//NOTE: an environmental Item is active when set to 1, as in TRUE! all other items and inactive return 0
+	virtual string verb(){return "";};	
+	virtual string noun(){return "";};	
 	
 	//setters
 	void name(string in){itemName=in;};
@@ -116,14 +118,17 @@ class EnvironmentItem:public Item{
 protected:
 	string requirement;		//the name of the item that must be used in room to satisfy and remove object.
 	bool state;				//affects room's description or not
-	
+	string Everb;
+	string Enoun; 	//these hold the command that the item impedes.
 public:
 	EnvironmentItem(){};
-	EnvironmentItem(string n, string r){name(n); requirement=r;state=1;};
+	EnvironmentItem(string n, string r, string ev, string en){name(n); requirement=r;state=1; Everb=ev;Enoun=en;};
 	~EnvironmentItem(){};
 	//getter
 	string requiredItem(){return requirement;};
 	bool currentState(){return state;};
+	string verb(){return Everb;};
+	string noun(){return Enoun;};
 	//setters
 	void requiredItem(string in){requirement=in;};
 	void currentState(bool in){state=in;};
