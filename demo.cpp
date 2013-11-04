@@ -21,8 +21,6 @@ int main(){
 	InventoryItem PocketKnife("POCKETKNIFE", "A small, metal knife. Slightly rusted and not very sharp.");
 	InventoryItem Clock("ALARMCLOCK", "Permanently stuck at 3:16.");
 	InventoryItem Painting("PAINTING", "A picture of a bearded man whose eyes seems to follow you wherever you move in the room.");
-	EnvironmentItem Hatch("HATCH", "orb");
-	InventoryItem Flashlight("FLASHLIGHT", "Small, yet emits a powerful beam.");
 	//Item Darkness("Darkness");
 //	Item GeneratorSwitch("GeneratorSwitch");
 //	Item OrbButton("OrbButton");
@@ -44,17 +42,14 @@ int main(){
     
     
     //second Room
+	EnvironmentItem Hatch("HATCH", "orb");
+	
+
     List secondRList;// second room's item list.
     cout << "debug42\n"; //*********current final success**********
     //		initialize(firstRList); //herpaderp the list has no constructor
 	secondRList.append((Item*)&Hatch);
-	cout << "debug52\n";
-	secondRList.append((Item*)&PocketKnife);
-	cout << "debug62\n";
-	secondRList.append((Item*)&Clock);
-	cout << "debug72\n";
-	secondRList.append((Item*)&Painting);
-	cout << "debug82\n";
+
 	string* secondRMC = new string [3]; // second room's move command.
 	Room** secondRMD =new Room*[3]; secondRMD[0]=NULL; // second room's move
     string n2="Secondroom";
@@ -65,38 +60,22 @@ int main(){
     
     
     //third Room
+	InventoryItem Flashlight("FLASHLIGHT", "Small, yet emits a powerful beam.");
     List thirdRList;// third room's item list.
-    cout << "debug42\n"; //*********current final success**********
-    //		initialize(firstRList); //herpaderp the list has no constructor
-	thirdRList.append((Item*)&Hatch);
-	cout << "debug52\n";
-	thirdRList.append((Item*)&PocketKnife);
-	cout << "debug62\n";
-	thirdRList.append((Item*)&Clock);
-	cout << "debug72\n";
-	thirdRList.append((Item*)&Painting);
-	cout << "debug82\n";
+	thirdRList.append((Item*)&Flashlight);
+
 	string* thirdRMC = new string [1]; // second room's move command.
 	Room** thirdRMD =new Room*[1]; thirdRMD[0]=NULL; // second room's move
     string n3="Thirdroom";
-    string SD3="in the glass room, there is a large array of switches and controls, all out of power there is a flashlight there, as well as a first aid kit";
-    string LD3=" no long longDescript";
+    string SD3="the glass room, where there is a large array of switches and controls, all out of power.";
+    string LD3=" This seems to be a control room of some sort";
 	Room ThirdRoom(n3, 3, &thirdRList ,SD3,LD3, thirdRMC,thirdRMD, 1);
     //Constructing the third room.
     
     
     //Fourth Room
     List fourthRList;// Fourth room's item list.
-    cout << "debug42\n"; //*********current final success**********
-    //		initialize(firstRList); //herpaderp the list has no constructor
-	fourthRList.append((Item*)&Hatch);
-	cout << "debug52\n";
-	fourthRList.append((Item*)&PocketKnife);
-	cout << "debug62\n";
-	fourthRList.append((Item*)&Clock);
-	cout << "debug72\n";
-	fourthRList.append((Item*)&Painting);
-	cout << "debug82\n";
+
 	string* fourthRMC = new string [2]; // second room's move command.
 	Room** fourthRMD =new Room*[2]; fourthRMD[0]=NULL; // second room's move
     string n4="Fourthroom";
@@ -108,16 +87,8 @@ int main(){
     
     //Fifth Room
     List fifthRList;// Fifth room's item list.
-    cout << "debug42\n"; //*********current final success**********
-    //		initialize(firstRList); //herpaderp the list has no constructor
 	fifthRList.append((Item*)&Hatch);
-	cout << "debug52\n";
-	fifthRList.append((Item*)&PocketKnife);
-	cout << "debug62\n";
-	fifthRList.append((Item*)&Clock);
-	cout << "debug72\n";
-	fifthRList.append((Item*)&Painting);
-	cout << "debug82\n";
+
 	string* fifthRMC = new string [1]; // second room's move command.
 	Room** fifthRMD =new Room*[1]; fifthRMD[0]=NULL; // second room's move
     string n5="Fifthroom";
@@ -129,16 +100,9 @@ int main(){
     
     //Sixth Room
     List sixthRList;// Fifth room's item list.
-    cout << "debug42\n"; //*********current final success**********
-    //		initialize(firstRList); //herpaderp the list has no constructor
+  
 	sixthRList.append((Item*)&Hatch);
-	cout << "debug52\n";
-	sixthRList.append((Item*)&PocketKnife);
-	cout << "debug62\n";
-	sixthRList.append((Item*)&Clock);
-	cout << "debug72\n";
-	sixthRList.append((Item*)&Painting);
-	cout << "debug82\n";
+
 	string* sixthRMC = new string [2]; // second room's move command.
 	Room** sixthRMD =new Room*[2]; sixthRMD[0]=NULL; // second room's move
     string n6="Sixthroom";
@@ -152,15 +116,8 @@ int main(){
     cout << "debug42\n"; //*********current final success**********
     //		initialize(firstRList); //herpaderp the list has no constructor
 	seventhRList.append((Item*)&Hatch);
-	cout << "debug52\n";
-	seventhRList.append((Item*)&PocketKnife);
-	cout << "debug62\n";
-	seventhRList.append((Item*)&Clock);
-	cout << "debug72\n";
-	seventhRList.append((Item*)&Painting);
-	cout << "debug82\n";
-	string* seventhRMC = new string [2]; // second room's move command.
-	Room** seventhRMD =new Room*[2]; seventhRMD[0]=NULL; // second room's move
+	string* seventhRMC = new string [3]; // second room's move command.
+	Room** seventhRMD =new Room*[3]; seventhRMD[0]=NULL; // second room's move
     string n7="Seventhroom";
     string SD7="You are in a hallway. There are doors to the east (ROOM 5), north (ROOM 7) and south (Can't enter, door is barricaded). There are signs above each of the doors but two of them are so rusted you can't make out a word.The sign over the south door shows 'STAIRWELL'. ";
     string LD7=" In what you hope is red paint, you see the words 'GET DOWNSTAIRS IF YOU STILL CAN.' scrawled in large letters across a wall. You hear dripping in the distance.";
@@ -169,16 +126,8 @@ int main(){
     
     //Eighth Room
     List eighthRList;// Eighth room's item list.
-    cout << "debug42\n"; //*********current final success**********
-    //		initialize(firstRList); //herpaderp the list has no constructor
 	eighthRList.append((Item*)&Hatch);
-	cout << "debug52\n";
-	eighthRList.append((Item*)&PocketKnife);
-	cout << "debug62\n";
-	eighthRList.append((Item*)&Clock);
-	cout << "debug72\n";
-	eighthRList.append((Item*)&Painting);
-	cout << "debug82\n";
+	
 	string* eighthRMC = new string [2]; // second room's move command.
 	Room** eighthRMD =new Room*[2]; eighthRMD[0]=NULL; // second room's move
     string n8="EighthRoom";
@@ -190,16 +139,8 @@ int main(){
     
     //Ninth Room
     List ninthRList;// Ninth room's item list.
-    cout << "debug42\n"; //*********current final success**********
-    //		initialize(firstRList); //herpaderp the list has no constructor
 	ninthRList.append((Item*)&Hatch);
-	cout << "debug52\n";
-	ninthRList.append((Item*)&PocketKnife);
-	cout << "debug62\n";
-	ninthRList.append((Item*)&Clock);
-	cout << "debug72\n";
-	ninthRList.append((Item*)&Painting);
-	cout << "debug82\n";
+
 	string* ninthRMC = new string [2]; // second room's move command.
 	Room** ninthRMD =new Room*[2]; ninthRMD[0]=NULL; // second room's move
     string n9="NinthRoom";
@@ -209,7 +150,7 @@ int main(){
     //Constructing the Ninth room.
 
     //room connection
-    cout<<firstRMD[0]<<endl;
+    cout<<firstRMD[0]<<"debug1" <<endl;
     firstRMC[0]="NORTH";
     firstRMD[0]=&SecondRoom;
     cout<<firstRMD[0]<<endl;
@@ -231,22 +172,25 @@ int main(){
     
     fifthRMC[0]="WEST";
     fifthRMD[0]=&SixthRoom;
-    
+        cout<<"\n debug A\n";
     sixthRMC[0]="EAST";
     sixthRMD[0]=&FifthRoom;
     sixthRMC[0]="NORTH";
     sixthRMD[0]=&SeventhRoom;
-    
+            cout<<"\n debug B\n"; // we get here
     seventhRMC[0]="SOUTH";
     seventhRMD[0]=&SixthRoom;
+	cout<<"\n debug B1\n"; // we get here
     seventhRMC[1]="EAST";
     seventhRMD[1]=&EighthRoom;
+	cout<<"\n debug B2\n"; // we get here
     seventhRMC[2]="NORTH";
+	cout<<"\n debug B3\n"; // we get here
     seventhRMD[2]=&NinthRoom;
-    
+            cout<<"\n debug C\n"; // but not here
     eighthRMC[0]="WEST";
     eighthRMD[0]=&SeventhRoom;
-    
+//not getting here
     ninthRMC[0]="SOUTH";
     ninthRMD[0]=&SeventhRoom;
     //done with room connection
