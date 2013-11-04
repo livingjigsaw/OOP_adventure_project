@@ -90,13 +90,13 @@ Item* List::findByCondition(string value){
     return walker->data;
 }
 
-Item* List::findEnv(){		//Env items placed in list FIRST have PRIORITY!!!
+Item* List::findByCommand(string Cverb,string Cnoun){		//Env items placed in list FIRST have PRIORITY!!!
     Node* walker=head;
     if (head==NULL) {
         return NULL;
     }
     while (walker!=NULL) {
-        if (walker->data->currentState()) {
+        if (walker->data->verb()==Cverb && walker->data->noun()==Cnoun) {
             break;
         }
         if (walker->next==NULL) {
@@ -121,6 +121,18 @@ std::string List::listAll(){		//Env items placed in list FIRST have PRIORITY!!!
 		else
 			sum += walker->data->name() + ", ";
 	
+		walker=walker->next;
+    }
+    return sum;
+}
+
+std::string List::listAllDesc(){		//Env items placed in list FIRST have PRIORITY!!!
+    Node* walker=head;
+	string sum ="";
+    while (walker!=NULL) {
+		if (walker->data->currentState())
+			sum += walker->data->description() + "\n\n";
+		
 		walker=walker->next;
     }
     return sum;

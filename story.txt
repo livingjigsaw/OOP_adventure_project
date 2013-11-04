@@ -4,10 +4,9 @@ You wake up. You are on a stiff bed in a small, generic room
 with basic living necessities. The room seems old, partially ruined.
 there is one door, in an arbitrary direction that will be designated as north.
 
-There is a clock, a painting, a pocketknife, and a notebook in the room."
+There is a clock, a pocketknife, and a notebook in the room."
 
-Behind the painting is a button that clicks, but nothing noticeable happens. (Opens a compartment in a later room).
-the notebook hold furiously scratched notes about cake, fire, and lies. and a cute drawing of a 
+The notebook hold furiously scratched notes about cake, fire, and lies. and a cute drawing of a 
 cube with a heart on it.
 
 ROOM 2 (North of ROOM 1)
@@ -42,10 +41,10 @@ returning to the glass room (ROOM 3), none of the switches are on, but there is 
 
 press it, and you hear a loud, metallic clang on the floor behind you
 
-there is a metallic orb on the ground, very metllic and shiny, perfectly smooth except for four indentations,
-placed symmetrically around the orb. (not seen by player, this thing holds four gems
-distributed thoughout the game, and will open the ending when in the right
-room with all four gems in the ball)
+there is a metallic orb on the ground, very metllic and shiny, perfectly smooth except for an indentation,
+placed symmetrically around the orb. (not seen by player, this thing holds a gem
+found in the game, and will open the ending when in the right
+room with the gem in the ball.)
 
 pick it up.
 
@@ -54,7 +53,7 @@ and you are instantly teleported into a new place (ROOM 5)
 ROOM 5 (After Teleportation from ROOM 4)
 You stand in a bare abandoned laboratory, still clutching the orb. The smell of electricity is in the air as you step down from a raised platform in the middle of the room. 
 You see a single door to the west (ROOM 6) but realize it is locked electronically, requiring a palm scan to unlock it.
-(If player pressed button) - You see an open compartment with what looks like a dart gun (DARTGUN) in it. (Not required to finish game).
+You see an open compartment with what looks like a dart gun (DARTGUN) in it.
 
 If you try to go west, you try to scan your palm, and surprisingly, you hear a short BEEP and the door slides open.
 
@@ -95,3 +94,57 @@ You can climb down the hole to the floor below, but you won't be able to return.
 If the player chooses to USE metallic orb, the blue gem (sapphire) would be attracted to the orb. 
 It flies across the room and embeds itself on one of the indentations of the orb.
 
+BY CLIMBING INTO THE HOLE, YOU ARE ABANDONING THE ENTIRE FLOOR.
+
+ROOM 10 (BELOW ROOM 9)
+You're in another hallway. The walls are covered with peeling wallpaper, with brown, foul smelling stains splattered on them.
+There is a door to the north (ROOM 11) and another to the south (ROOM 12).
+The only light in the hallway comes from the hole in the ceiling and the sound of acid dripping and sizzling fills the hallway.
+You hear a scraping noise in the distance.
+
+ROOM 11 (NORTH OF ROOM 10)
+You walk into what seems to be yet another laboratory.
+You are startled to see posters with your face on them plastered all over the room.
+A whiteboard hangs on a wall. On it are descriptions of DNA sequences and what looks suspiciously like a picture of your forearm.
+A scientific journal (JOURNAL) lies on a desk. (This journal explains that the scientists were attempting to create a clone of an influencial politican
+but failed repeatedly. The failed experiments grew feral and violent and were kept under lock. The journal ends by stating that the scientists had isolated 
+the problematic gene and are working on a serum to cure it.)
+A door to the south leads back to the hallway (ROOM 10).
+
+ROOM 12 (SOUTH OF ROOM 11)
+You enter the room and immediately see a door east(leading to ROOM 13) blocked(LOCKEDDOOR) by two... legless beings (ZOMBIES).
+You are surprised to see that these are still alive, but enable to move foward.
+The scraping noise is caused by their clawing of the floor, and upon noticing you they look up.
+You are startled to see that they both have the exact same face. Your face.
+In fact, they look exactly like you, except for the minor detail of not having legs.
+A door to the north leads back to the hallway. (ROOM 10)
+
+(TWO THINGS BLOCK THE WAY FORWARD: THE ZOMBIES AND THE LOCKED DOOR. THE PLAYER WOULD FIRST HAVE TO SHOOT THE ZOMBIES WITH THE DART GUN
+AND THEN OPEN THE DOOR USING THE JANITOR KEYS)
+
+ROOM 13 (EAST OF ROOM 12)
+You walk in and immediately get hit by a foul stench. There are dead bodies everywhere. 
+Most have decomposed to the bone, but you make out some details: The bodies wearing lab coats are missing limbs while the others looks exactly alike.
+Like you.
+One of the bodies wearing a lab coat clutches a a few pieces of paper. (NOTES)
+There is a door to the weat (BACK TO ROOM 12) and another to the east. (ROOM 14), but it is blocked by a hatch that looks like it can receive a spherical object.
+You feel sick and want to get out of the room as soon as possible.
+
+(By reading the notes, the player learns that the serum created by the scientists to suppress the feral genes was tested on a clone but it only enhanced its strength. It murdered the scientists in the lab, and freed the rest of the clones. The clones started to hunt the scientists and attacking them.
+The remaining survivors barricaded themselves in this room for a week, but the clones were relentless. The scientists knew that they would die of starvation if they didn't try to escape, and seeing as the mysterious door to the east would not budge, their only option was to fight their way out.)
+
+(IF PLAYER USES ORB[WITH GEM] IN THE ROOM, THE DOOR SLIDES OPEN.)
+ROOM 14(EAST OF ROOM 13) FINAL ROOOOOOOOM!
+You walk into a futuristic room with sleek metal walls on all sides. A single large screen dominates the far end, opposite the door.
+Big bold letters spell out "CONTINUE?" on the screen.
+Right below the screen is a big red button.
+There is a door to the west (ROOM 13).
+Type "Continue" to press the BIG RED BUTTON!
+
+IF PLAYER TYPES "CONTINUE", THE FOLLOWING TEXT APPEARS:
+"Your right hand balls into a fist, ready to satisfy your urge of slamming the seductively-huge red button. 
+As you bring your fist down, memories come flooding back. You're struck with a massive sense of deja vu as you realize that you've done this a million times.
+You try hard to retract your fist, but it is too late - inertia has taken over at this point, and you can only watch in despair as your fist slam on to the button.
+A bright flash blinds you and you realize that you are on the ground."
+
+RESTART THE GAME LOOP, FOLKS!

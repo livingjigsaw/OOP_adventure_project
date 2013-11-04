@@ -34,21 +34,20 @@ Player::Player(Room* l)
 
 string Player::getDescription(string command, string object){
 		string roomDesc="";
-		Item* checker = currentLocation()->listItem()->findEnv();
+		string checker = currentLocation()->listItem()->listAllDesc();
 	if((command=="LOOK"||command=="OBSERVE")&&(object=="ROOM"||object==""))
 		roomDesc = currentLocation()->shortDescript() + " " + currentLocation()->longDescript();
 	else{
 		roomDesc = currentLocation()->shortDescript();
 	}
-	if(checker!=NULL)
-		roomDesc+= "\n\n" + checker->description();
+	roomDesc += "\n\n " + checker;
 	return roomDesc;
 }
 
 void Player::performAction(string verb, string noun)
 {
-	Item* EnvBlock = currentLocation()->listItem()->findEnv();
-	if(EnvBlock!=NULL && verb==EnvBlock->verb() && noun==EnvBlock->noun() && EnvBlock->currentState()==true){
+	Item* EnvBlock = currentLocation()->listItem()->findByCommand(verb, noun);
+	if(EnvBlock!=NULL && EnvBlock->currentState()==true){
 		cout << "The " << EnvBlock->name() << " is in the way!\n";  
 	}
     else if (verb == "TAKE")
@@ -158,8 +157,10 @@ void Player::performAction(string verb, string noun)
         {
             cout <<"You have moved " << noun << endl << endl;
 			cout << "You're in " << getDescription(verb, noun) <<endl;
-			cout <<"There is a " << currentLocation()->listItem()->listAll() <<" in this room." << endl;
-
+			string itemsInRoom=currentLocation()->listItem()->listAll();
+			if (itemsInRoom != "")
+				cout <<"There is a " << itemsInRoom <<" in this room." << endl;
+			
         }
 
     }

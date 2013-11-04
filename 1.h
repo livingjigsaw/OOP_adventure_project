@@ -69,7 +69,8 @@ public:
 	Item* findByCondition(string value);
 	int getSize();
 	void removeNth(int n);
-	Item* findEnv();
+	Item* findByCommand(string Cverb, string Cnoun);
+	string listAllDesc();
 	string listAll();
 };
 
