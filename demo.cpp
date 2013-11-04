@@ -25,6 +25,7 @@ int main(){
 //	Item GeneratorSwitch("GeneratorSwitch");
 //	Item OrbButton("OrbButton");
 //	Item Orb("Orb");
+    
     // first Room
 	List firstRList;// First room's item list.
 //		initialize(firstRList); //herpaderp the list has no constructor
@@ -53,8 +54,8 @@ int main(){
 	string* secondRMC = new string [3]; // second room's move command.
 	Room** secondRMD =new Room*[3]; secondRMD[0]=NULL; // second room's move
     string n2="Secondroom";
-    string SD2="a large, open room that's somewhat bare. There is a glass room in the Center of this room, and a wooden door to the east, and a massive opening where the hatch once was. ";
-    string LD2="Warning lights are flashing next to the massive opening, but no alarms are going off. the control room blinks many colors at off intervals";
+    string SD2="a large, open room that's somewhat bare. There is a glass room in the Center of this room, and a wooden door to the east, and a massive opening where the hatch once was.";
+    string LD2="Warning lights are flashing next to the massive opening, but no alarms are going off. the control room blinks many colors at off interval";
 	Room SecondRoom(n2, 3, &secondRList ,SD2,LD2, secondRMC,secondRMD, 3);
     //Constructing the second room.
     
@@ -167,7 +168,7 @@ int main(){
     fourthRMC[0]="WEST";
     fourthRMD[0]=&SecondRoom;
     
-    fourthRMC[1]="Teleportation";
+    fourthRMC[1]="TELEPORTATION";
     fourthRMD[1]=&FifthRoom;
     
     fifthRMC[0]="WEST";
