@@ -337,6 +337,18 @@ int main(){
 			noun = ""; // Clears the variables
 			verb = "";
 		}
+        if (verb == "USE" && noun == "ZIPFIZZ")
+        {
+            cout << "You finish the bottle of ZipFizz in one gulp and feel a rush of energy." << endl;
+            cout << "You grin like the scatterbrain you are, and stare for a moment at the unicorns that materialize around you." << endl;
+            cout << "You reach out to touch the closest unicorn, but suddenly all of them turn into demonic horses." << endl;
+            cout << "Ronald McDonald himself materializes and with a wave of his hand, the demonic horses spear you with their horns." << endl;
+            cout << "As you clutch your stomach and fall to the floor in your drug-induced stupor, your last sensation was not a happy one; it seems that you have pooped your pants." << endl;
+            cout << endl;
+            cout << "Don't do drugs, Landon." << endl;
+            cout << endl;
+            break;
+        }
         if (Player1.currentLocation() == &FourteenthRoom && verb == "PRESS" && noun == "REDBUTTON")
         {
             cout << "Your right hand balls into a fist, ready to satisfy your urge of slamming the seductively-huge red button. " << endl;
