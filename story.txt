@@ -111,7 +111,7 @@ but failed repeatedly. The failed experiments grew feral and violent and were ke
 the problematic gene and are working on a serum to cure it.)
 A door to the south leads back to the hallway (ROOM 10).
 
-ROOM 12 (SOUTH OF ROOM 11)
+ROOM 12 (SOUTH OF ROOM 10)
 You enter the room and immediately see a door east(leading to ROOM 13) blocked(LOCKEDDOOR) by two... legless beings (ZOMBIES).
 You are surprised to see that these are still alive, but enable to move foward.
 The scraping noise is caused by their clawing of the floor, and upon noticing you they look up.

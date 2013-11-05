@@ -147,8 +147,69 @@ int main(){
     string n9="NinthRoom";
     string SD9="You walk into the room and right on to the edge of a gaping hole. You have found the source of the dripping sounds: A giant vat of what is presumably strong acid lies partially smashed on one end of the room. After an indeterminable time, the acid has corroded into the ground. Acid continues to drip on to the floor below, sizzling as it comes into contact with the tiled floor.";
     string LD9=" Once your eyes adjusted to the low light, you see a blue glint on the other side of the room; it seems the acid had also destroyed part of a safe. However, you can't reach the safe because of the huge hole in the middle of the room. A door to the south leads back to the cafeteria (ROOM 7). You can climb down the hole to the floor below, but you won't be able to return. (ROOM 10) If the player chooses to USE metallic orb, the blue gem (sapphire) would be attracted to the orb. ";
-	Room NinthRoom(n9, 3, &ninthRList ,SD9,LD9, ninthRMC,ninthRMD, 1);
+	Room NinthRoom(n9, 3, &ninthRList ,SD9,LD9, ninthRMC,ninthRMD, 2);
     //Constructing the Ninth room.
+    
+    //Tenth Room
+    List tenthRList;// Tenth room's item list.
+	tenthRList.append((Item*)&Hatch);
+    
+	string* tenthRMC = new string [3]; // second room's move command.
+	Room** tenthRMD =new Room*[3]; tenthRMD[0]=NULL; // second room's move
+    string n10="TenthRoom";
+    string SD10="You're in another hallway. The walls are covered with peeling wallpaper, with brown, foul smelling stains splattered on them.";
+    string LD10=" There is a door to the north (ROOM 11) and another to the south (ROOM 12). The only light in the hallway comes from the hole in the ceiling and the sound of acid dripping and sizzling fills the hallway. You hear a scraping noise in the distance. ";
+	Room TenthRoom(n10, 3, &tenthRList ,SD10,LD10,tenthRMC,tenthRMD, 3);
+    //Constructing the Tenth room.
+    
+    //Eleventh Room
+    List eleventhRList;// Eleventh room's item list.
+	eleventhRList.append((Item*)&Hatch);
+    
+	string* eleventhRMC = new string [2]; // second room's move command.
+	Room** eleventhRMD =new Room*[2]; eleventhRMD[0]=NULL; // second room's move
+    string n11="EleventhRoom";
+    string SD11="You're in another hallway. The walls are covered with peeling wallpaper, with brown, foul smelling stains splattered on them.";
+    string LD11=" There is a door to the north (ROOM 11) and another to the south (ROOM 12). The only light in the hallway comes from the hole in the ceiling and the sound of acid dripping and sizzling fills the hallway. You hear a scraping noise in the distance. ";
+	Room EleventhRoom(n11, 3, &eleventhRList ,SD11,LD11,eleventhRMC,eleventhRMD, 1);
+    //Constructing the Eleventh room.
+    
+    //Twelfth Room
+    List twelfthRList;// Twelfth room's item list.
+	twelfthRList.append((Item*)&Hatch);
+    
+	string* twelfthRMC = new string [2]; // second room's move command.
+	Room** twelfthRMD =new Room*[2]; twelfthRMD[0]=NULL; // second room's move
+    string n12="TwelfthRoom";
+    string SD12="You enter the room and immediately see a door east(leading to ROOM 13) blocked(LOCKEDDOOR) by two... legless beings (ZOMBIES). You are surprised to see that these are still alive, but enable to move foward. The scraping noise is caused by their clawing of the floor, and upon noticing you they look up.";
+    string LD12=" You are startled to see that they both have the exact same face. Your face. In fact, they look exactly like you, except for the minor detail of not having legs. A door to the north leads back to the hallway. (ROOM 10)(TWO THINGS BLOCK THE WAY FORWARD: THE ZOMBIES AND THE LOCKED DOOR. THE PLAYER WOULD FIRST HAVE TO SHOOT THE ZOMBIES WITH THE DART GUN AND THEN OPEN THE DOOR USING THE JANITOR KEYS)" ;
+	Room TwelfthRoom(n12, 3, &eleventhRList ,SD12,LD12,twelfthRMC,twelfthRMD, 2);
+    //Constructing the Twelfth room.
+    
+    //Thirteenth Room
+    List thirteenthRList;// Thirteenth room's item list.
+	thirteenthRList.append((Item*)&Hatch);
+    
+	string* thirteenthRMC = new string [2]; // second room's move command.
+	Room** thirteenthRMD =new Room*[2]; twelfthRMD[0]=NULL; // second room's move
+    string n13="ThirteenthRoom";
+    string SD13="You walk in and immediately get hit by a foul stench. There are dead bodies everywhere. Most have decomposed to the bone, but you make out some details: The bodies wearing lab coats are missing limbs while the others looks exactly alike. Like you.";
+    string LD13=" One of the bodies wearing a lab coat clutches a a few pieces of paper. (NOTES) There is a door to the weat (BACK TO ROOM 12) and another to the east. (ROOM 14), but it is blocked by a hatch that looks like it can receive a spherical object. You feel sick and want to get out of the room as soon as possible.";
+	Room ThirteenthRoom(n13, 3, &thirteenthRList ,SD13,LD13,thirteenthRMC,thirteenthRMD, 2);
+    //Constructing the Thirteenth room.
+    
+    
+    //Fourteenth Room
+    List fourteenthRList;// Fourteenth room's item list.
+	fourteenthRList.append((Item*)&Hatch);
+    
+	string* fourteenthRMC = new string [2]; // second room's move command.
+	Room** fourteenthRMD =new Room*[2]; twelfthRMD[0]=NULL; // second room's move
+    string n14="FourteenthRoom";
+    string SD14="You walk into a futuristic room with sleek metal walls on all sides. A single large screen dominates the far end, opposite the door.";
+    string LD14=" Big bold letters spell out 'CONTINUE?' on the screen. Right below the screen is a big red button. There is a door to the west (ROOM 13). Type 'Continue' to press the BIG RED BUTTON!";
+	Room FourteenthRoom(n14, 3, &fourteenthRList ,SD14,LD14,fourteenthRMC,fourteenthRMD, 1);
+    //Constructing the Thirteenth room.
 
     //room connection
     //cout<<firstRMD[0]<<"debug1" <<endl;
@@ -194,10 +255,33 @@ int main(){
 //not getting here
     ninthRMC[0]="SOUTH";
     ninthRMD[0]=&SeventhRoom;
-    //done with room connection
+    ninthRMC[1]="BELOW";
+    ninthRMD[1]=&TenthRoom;
     
+    tenthRMC[0]="UP";
+    tenthRMD[0]=&NinthRoom;
+    tenthRMC[1]="NORTH";
+    tenthRMD[1]=&EleventhRoom;
+    tenthRMC[2]="SOUTH";
+    tenthRMD[2]=&TwelfthRoom;
+    
+    eleventhRMC[0]="SOUTH";
+    eleventhRMD[0]=&TenthRoom;
+    
+    twelfthRMC[0]="NORTH";
+    twelfthRMD[0]=&TenthRoom;
+    twelfthRMC[1]="EAST";
+    twelfthRMD[1]=&ThirteenthRoom;
+    
+    thirteenthRMC[0]="WEST";
+    thirteenthRMD[0]=&TwelfthRoom;
+    thirteenthRMC[1]="EAST";
+    thirteenthRMD[1]=&FourteenthRoom;
+    
+    fourteenthRMC[0]="WEST";
+    fourteenthRMD[0]=&ThirteenthRoom;
 
-	
+	//done with room connection
 	Player Player1(&FirstRoom);
 	//cout<<"debug11\n";
 	char check1;
