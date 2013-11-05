@@ -124,7 +124,7 @@ private:
 	string targetItem;	//this is the status item that this affects.
 public:
 	pieceItem(){};
-	pieceItem(string in, string descript){name(in); description(descript);};
+	pieceItem(string in, string descript, string Starget){name(in); description(descript);targetItem=Startget;};
 	~pieceItem(){};
 	//getter
 	string target(){return targetItem;};

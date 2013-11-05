@@ -78,7 +78,7 @@ int main(){
     
     //Fourth Room
     EnvironmentItem Generator("GENERATOR", "POCKETKNIFE", "MOVE", "EAST", "There is a machine with the word Generator on the wall behind it. A wire connects the generator to the door in the room.");
-    InventoryItem Orb("ORB", "A metallic orb, very metllic and shiny, perfectly smooth except for an indentation.");
+    StatusItem Orb("ORB", "A metallic orb, very metllic and shiny, perfectly smooth except for an indentation.");
     List fourthRList;// Fourth room's item list.
     fourthRList.append((Item*)&Orb);
     fourthRList.append(&Generator);
@@ -150,7 +150,7 @@ int main(){
     
     
     //Ninth Room
-    InventoryItem Sapphire("SAPPHIRE", "A shiny blue gem, precisely carved into a round shape, as if it was meant to be embedded in some larger object.");
+    pieceItem Sapphire("SAPPHIRE", "A shiny blue gem, precisely carved into a round shape, as if it was meant to be embedded in some larger object.", "ORB");
     List ninthRList;// Ninth room's item list.
 	ninthRList.append((Item*)&Sapphire);
 
@@ -337,7 +337,7 @@ int main(){
 			noun = ""; // Clears the variables
 			verb = "";
 		}
-        if (verb == "USE" && noun == "ZIPFIZZ")
+        if (verb == "USE" && noun == "ZIPFIZZ" && Player1->inventory()->findByName("ZIPFIZZ")!=NULL)
         {
             cout << "You finish the bottle of ZipFizz in one gulp and feel a rush of energy." << endl;
             cout << "You grin like the scatterbrain you are, and stare for a moment at the unicorns that materialize around you." << endl;
