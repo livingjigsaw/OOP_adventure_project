@@ -337,7 +337,7 @@ int main(){
 			noun = ""; // Clears the variables
 			verb = "";
 		}
-        if (verb == "USE" && noun == "ZIPFIZZ" && Player1->inventory()->findByName("ZIPFIZZ")!=NULL)
+        if (verb == "USE" && noun == "ZIPFIZZ" && Player1.inventory()->findByName("ZIPFIZZ")!=NULL)
         {
             cout << "You finish the bottle of ZipFizz in one gulp and feel a rush of energy." << endl;
             cout << "You grin like the scatterbrain you are, and stare for a moment at the unicorns that materialize around you." << endl;
