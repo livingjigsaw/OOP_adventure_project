@@ -141,7 +141,7 @@ protected:
 	string Enoun; 	//these hold the command that the item impedes.
 public:
 	EnvironmentItem(){};
-	EnvironmentItem(string n, string r, string ev, string en){name(n); requirement=r;state=1; Everb=ev;Enoun=en;};
+	EnvironmentItem(string n, string r, string ev, string en, string dd){name(n); requirement=r;state=1; Everb=ev;Enoun=en;description(dd);};
 	~EnvironmentItem(){};
 	//getter
 	string requiredItem(){return requirement;};

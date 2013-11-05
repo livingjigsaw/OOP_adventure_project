@@ -148,6 +148,7 @@ void Player::performAction(string verb, string noun)
             if (*(currentLocation()->moveCommand()+i)==noun) {
                 currentLocation(*(currentLocation()->moveDest()+i));
                 moved=true;
+				break;
             }
         }
         

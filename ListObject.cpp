@@ -113,8 +113,10 @@ std::string List::listAll(){		//Env items placed in list FIRST have PRIORITY!!!
 	string sum ="";
     while (walker!=NULL) {
 		if(walker->next==NULL){
-			if(walker->prev==NULL)
-				sum += walker->data->name();
+			if(walker->prev==NULL){
+				if(!walker->data->currentState())
+					sum += walker->data->name();
+			}
 			else
 				sum += "and " + walker->data->name();
 		}

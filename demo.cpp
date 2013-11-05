@@ -77,7 +77,7 @@ int main(){
     
     
     //Fourth Room
-    EnvironmentItem Generator("GENERATOR", "POCKETKNIFE", "MOVE", "EAST");
+    EnvironmentItem Generator("GENERATOR", "POCKETKNIFE", "MOVE", "EAST", "There is a machine with the word Generator on the wall behind it. A wire connects the generator to the door in the room.");
     InventoryItem Orb("ORB", "A metallic orb, very metllic and shiny, perfectly smooth except for an indentation.");
     List fourthRList;// Fourth room's item list.
     fourthRList.append((Item*)&Orb);
@@ -87,7 +87,7 @@ int main(){
 	Room** fourthRMD =new Room*[2]; fourthRMD[0]=NULL; // second room's move
     string n4="Fourthroom";
     string SD4="a pitch black room. A door lies to the west, where you came from.";
-    string LD4="There is a machine with the word generator on the wall behind it, as well as a switch in the on position, but it doesn't make a connection. There is a mysterious smooth sphere in the middle of the room, as well as a locked door to the south that seems to be connected to the generator.";
+    string LD4="As your eyes adjust to the low light, You see a door to the south.";
 	Room FourthRoom(n4, 1, &fourthRList ,SD4,LD4, fourthRMC,fourthRMD, 2);
     //Constructing the Fourth room.
     
