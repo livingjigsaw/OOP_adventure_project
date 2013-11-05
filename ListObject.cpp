@@ -117,11 +117,11 @@ std::string List::listAll(){		//Env items placed in list FIRST have PRIORITY!!!
 				if(walker->prev==NULL){
 						sum += walker->data->name();
 				}
+				else if(sum == "")
+					sum += walker->data->name();
 				else
 					sum += "and " + walker->data->name();
 			}
-			else if(sum == "")
-				sum += walker->data->name();
 			else
 				sum += walker->data->name() + ", ";
 		

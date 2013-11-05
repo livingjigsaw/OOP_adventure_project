@@ -192,6 +192,10 @@ void Player::performAction(string verb, string noun)
 		}
 	}
 	
+	else if(verb == "HELP"){
+		cout << " You must enter in a two-word command, in the format\nverb noun\n\nIf you get stuck, try looking at the room or at some of the items in your inventory. \nGood Luck!\n";
+	}
+	
     else
     {
         cout << "I'm sorry, I don't understand that." << endl;
