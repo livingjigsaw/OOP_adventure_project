@@ -41,10 +41,12 @@ bool pieceItem::use(List* charInventory, string& target){
 	Item* match = charInventory->findByName(now->target());
 	if (match==NULL)
 		return 0;
-	else
+	else{
 		match->currentState(1); //changes environmental var state TO FALSE TO MAKE IT IGNORED, for the description loader
 		target = match->name();
+		charInventory->removeNth(charInventory->find(now));
 		return 1;
+		}
 }
 
 bool StatusItem::use(List* roomInventory, string& target){ //assume the commad function determines if this is a status or not
@@ -52,10 +54,11 @@ bool StatusItem::use(List* roomInventory, string& target){ //assume the commad f
 	Item* match = roomInventory->findByCondition(now->name());
 	if (match==NULL)
 		return 0;
-	else
+	else{
 		match->currentState(1); //changes environmental var state TO FALSE TO MAKE IT IGNORED, for the description loader
 		target = match->name();
 		return 1;
+		}
 }
 /*bool EdibleItem::eat(List<Item*>* charInventory){
 	EdibleItem* now = this;
