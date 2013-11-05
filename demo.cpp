@@ -187,8 +187,8 @@ int main(){
     //Constructing the Eleventh room.
     
     //Twelfth Room
-    EnvironmentItem Lockeddoor("LOCKEDDOOR", "JANITORKEYS", "MOVE", "EAST");
-    EnvironmentItem Zombie("ZOMBIES","DARTGUN","MOVE", "EAST");
+    EnvironmentItem Lockeddoor("LOCKEDDOOR", "JANITORKEYS", "MOVE", "EAST", "The door east is locked.");
+    EnvironmentItem Zombie("ZOMBIES","DARTGUN","MOVE", "EAST", "The door east is blocked by two... legless beings. You are surprised to see that the creatures are still alive, but enable to move foward. The scraping noise is caused by their clawing of the floor, and upon noticing you they look up.  You are startled to see that they both have the exact same face. Your face. In fact, they look exactly like you, except for the minor detail of not having legs. ");
     List twelfthRList;// Twelfth room's item list.
 	twelfthRList.append(&Lockeddoor);
     twelfthRList.append(&Zombie);
@@ -196,13 +196,13 @@ int main(){
 	string* twelfthRMC = new string [2]; // second room's move command.
 	Room** twelfthRMD =new Room*[2]; twelfthRMD[0]=NULL; // second room's move
     string n12="TwelfthRoom";
-    string SD12="the room and immediately see a door east blocked by two... legless beings. You are surprised to see that the creatures are still alive, but enable to move foward. The scraping noise is caused by their clawing of the floor, and upon noticing you they look up.";
-    string LD12=" You are startled to see that they both have the exact same face. Your face. In fact, they look exactly like you, except for the minor detail of not having legs. A door to the north leads back to the hallway." ;
+    string SD12="the room and immediately see a door east.";
+    string LD12="A door to the north leads back to the hallway." ;
 	Room TwelfthRoom(n12, 2, &twelfthRList ,SD12,LD12,twelfthRMC,twelfthRMD, 2);
     //Constructing the Twelfth room.
     
     //Thirteenth Room
-    EnvironmentItem Lockedmagicdoor("SEALEDDOOR", "ORB", "MOVE", "EAST");
+    EnvironmentItem Lockedmagicdoor("SEALEDDOOR", "ORB", "MOVE", "EAST", "The door east is locked by a hatch that looks like it can receive a spherical object.");
     InventoryItem Notes("NOTES", "Notes scribbed desperately by a trapped scientist. According to the notes, the serum created by the scientists to suppress the feral genes was tested on a clone but it only enhanced its strength. It murdered the scientists in the lab, and freed the rest of the clones. The clones started to hunt the scientists and attacking them. The remaining survivors barricaded themselves in this room for a week, but the clones were relentless. The scientists knew that they would die of starvation if they didn't try to escape, and seeing as the mysterious door to the east would not budge, their only option was to fight their way out. It ends with 'I'm sorry, may God help us all.'");
     List thirteenthRList;// Thirteenth room's item list.
 	thirteenthRList.append((Item*)&Notes);
@@ -212,7 +212,7 @@ int main(){
 	Room** thirteenthRMD =new Room*[2]; twelfthRMD[0]=NULL; // second room's move
     string n13="ThirteenthRoom";
     string SD13="the room and immediately get hit by a foul stench. There are dead bodies everywhere. Most have decomposed to the bone, but you make out some details: The bodies wearing lab coats are missing limbs while the others looks exactly alike. Like you.";
-    string LD13=" One of the bodies wearing a lab coat clutches a a few pieces of paper. There is a door to the west and another to the east, but it is blocked by a hatch that looks like it can receive a spherical object. You feel sick and want to get out of the room as soon as possible.";
+    string LD13=" One of the bodies wearing a lab coat clutches a a few pieces of paper. There is a door to the west and another to the east. You feel sick and want to get out of the room as soon as possible.";
 	Room ThirteenthRoom(n13, 1, &thirteenthRList ,SD13,LD13,thirteenthRMC,thirteenthRMD, 2);
     //Constructing the Thirteenth room.
     
