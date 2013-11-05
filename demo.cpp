@@ -158,20 +158,19 @@ int main(){
 	Room** ninthRMD =new Room*[2]; ninthRMD[0]=NULL; // second room's move
     string n9="NinthRoom";
     string SD9="the room and right on to the edge of a gaping hole. You have found the source of the dripping sounds: A giant vat of what is presumably strong acid lies partially smashed on one end of the room. After an indeterminable time, the acid has corroded into the ground. Acid continues to drip on to the floor below, sizzling as it comes into contact with the tiled floor.";
-    string LD9=" Once your eyes adjusted to the low light, you see a blue glint on the other side of the room; it seems the acid had also destroyed part of a safe, and its contents are obtainable. A door to the south leads back to the cafeteria. You can climb down the hole to the floor below, but you won't be able to return. ";
+    string LD9=" Once your eyes adjusted to the low light, you see a blue glint on the other side of the room; it seems the acid had also destroyed part of a safe, and its contents are obtainable. A door to the south leads back to the cafeteria. You can climb down the hole to the floor below ('Move Down'), but you won't be able to return. ";
 	Room NinthRoom(n9, 1, &ninthRList ,SD9,LD9, ninthRMC,ninthRMD, 2);
     //Constructing the Ninth room.
     
     //Tenth Room
     List tenthRList;// Tenth room's item list.
-	tenthRList.append((Item*)&Clock);
     
-	string* tenthRMC = new string [3]; // second room's move command.
-	Room** tenthRMD =new Room*[3]; tenthRMD[0]=NULL; // second room's move
+	string* tenthRMC = new string [2]; // second room's move command.
+	Room** tenthRMD =new Room*[2]; tenthRMD[0]=NULL; // second room's move
     string n10="TenthRoom";
     string SD10="another hallway. The walls are covered with peeling wallpaper, with brown, foul smelling stains splattered on them.";
     string LD10=" There is a door to the north and another to the south. The only light in the hallway comes from the hole in the ceiling and the sound of acid dripping and sizzling fills the hallway. You hear a scraping noise in the distance. ";
-	Room TenthRoom(n10, 0, &tenthRList ,SD10,LD10,tenthRMC,tenthRMD, 3);
+	Room TenthRoom(n10, 0, &tenthRList ,SD10,LD10,tenthRMC,tenthRMD, 2);
     //Constructing the Tenth room.
     
     //Eleventh Room
@@ -191,21 +190,23 @@ int main(){
     EnvironmentItem Lockeddoor("LOCKEDDOOR", "JANITORKEYS", "MOVE", "EAST");
     EnvironmentItem Zombie("ZOMBIES","DARTGUN","MOVE", "EAST");
     List twelfthRList;// Twelfth room's item list.
-	twelfthRList.append((Item*)&Lockeddoor);
-    twelfthRList.append((Item*)&Zombie);
+	twelfthRList.append(&Lockeddoor);
+    twelfthRList.append(&Zombie);
     
 	string* twelfthRMC = new string [2]; // second room's move command.
 	Room** twelfthRMD =new Room*[2]; twelfthRMD[0]=NULL; // second room's move
     string n12="TwelfthRoom";
     string SD12="the room and immediately see a door east blocked by two... legless beings. You are surprised to see that the creatures are still alive, but enable to move foward. The scraping noise is caused by their clawing of the floor, and upon noticing you they look up.";
     string LD12=" You are startled to see that they both have the exact same face. Your face. In fact, they look exactly like you, except for the minor detail of not having legs. A door to the north leads back to the hallway." ;
-	Room TwelfthRoom(n12, 2, &eleventhRList ,SD12,LD12,twelfthRMC,twelfthRMD, 2);
+	Room TwelfthRoom(n12, 2, &twelfthRList ,SD12,LD12,twelfthRMC,twelfthRMD, 2);
     //Constructing the Twelfth room.
     
     //Thirteenth Room
+    EnvironmentItem Lockedmagicdoor("SEALEDDOOR", "ORB", "MOVE", "EAST");
     InventoryItem Notes("NOTES", "Notes scribbed desperately by a trapped scientist. According to the notes, the serum created by the scientists to suppress the feral genes was tested on a clone but it only enhanced its strength. It murdered the scientists in the lab, and freed the rest of the clones. The clones started to hunt the scientists and attacking them. The remaining survivors barricaded themselves in this room for a week, but the clones were relentless. The scientists knew that they would die of starvation if they didn't try to escape, and seeing as the mysterious door to the east would not budge, their only option was to fight their way out. It ends with 'I'm sorry, may God help us all.'");
     List thirteenthRList;// Thirteenth room's item list.
 	thirteenthRList.append((Item*)&Notes);
+    thirteenthRList.append(&Lockedmagicdoor);
     
 	string* thirteenthRMC = new string [2]; // second room's move command.
 	Room** thirteenthRMD =new Room*[2]; twelfthRMD[0]=NULL; // second room's move
@@ -217,23 +218,21 @@ int main(){
     
     
     //Fourteenth Room
-    EnvironmentItem Lockedmagicdoor("MAGICDOOR", "ORB", "MOVE", "EAST");
+
     List fourteenthRList;// Fourteenth room's item list.
-	fourteenthRList.append((Item*)&Lockedmagicdoor);
     
-	string* fourteenthRMC = new string [2]; // second room's move command.
-	Room** fourteenthRMD =new Room*[2]; twelfthRMD[0]=NULL; // second room's move
+	string* fourteenthRMC = new string [1]; // second room's move command.
+	Room** fourteenthRMD =new Room*[1]; twelfthRMD[0]=NULL; // second room's move
     string n14="FourteenthRoom";
     string SD14="a futuristic room with sleek metal walls on all sides. A single large screen dominates the far end, opposite the door.";
     string LD14=" Big bold letters spell out 'CONTINUE?' on the screen. Right below the screen is a big red button. There is a door to the west. Type 'PRESS REDBUTTON' to press the BIG RED BUTTON!";
 	Room FourteenthRoom(n14, 1, &fourteenthRList ,SD14,LD14,fourteenthRMC,fourteenthRMD, 1);
     //Constructing the Thirteenth room.
 
-    //room connection
-    //cout<<firstRMD[0]<<"debug1" <<endl;
+    //room connections
     firstRMC[0]="NORTH";
     firstRMD[0]=&SecondRoom;
-    //cout<<firstRMD[0]<<endl;
+
     secondRMC[0]="SOUTH";
     secondRMD[0]=&FirstRoom;
     
@@ -254,36 +253,34 @@ int main(){
     fifthRMD[0]=&SixthRoom;
     fifthRMC[1]="NORTH";
     fifthRMD[1]=&FourthRoom;
-    //    cout<<"\n debug A\n";
+
     sixthRMC[0]="EAST";
     sixthRMD[0]=&FifthRoom;
     sixthRMC[1]="NORTH";
     sixthRMD[1]=&SeventhRoom;
-    //        cout<<"\n debug B\n"; // we get here
+
     seventhRMC[0]="SOUTH";
     seventhRMD[0]=&SixthRoom;
-	//cout<<"\n debug B1\n"; // we get here
+
     seventhRMC[1]="EAST";
     seventhRMD[1]=&EighthRoom;
-	//cout<<"\n debug B2\n"; // we get here
+
     seventhRMC[2]="NORTH";
-	//cout<<"\n debug B3\n"; // we get here
+
     seventhRMD[2]=&NinthRoom;
-    //        cout<<"\n debug C\n"; // but not here
+
     eighthRMC[0]="WEST";
     eighthRMD[0]=&SeventhRoom;
-//not getting here
+
     ninthRMC[0]="SOUTH";
     ninthRMD[0]=&SeventhRoom;
-    ninthRMC[1]="BELOW";
+    ninthRMC[1]="DOWN";
     ninthRMD[1]=&TenthRoom;
     
-    tenthRMC[0]="UP";
-    tenthRMD[0]=&NinthRoom;
-    tenthRMC[1]="NORTH";
-    tenthRMD[1]=&EleventhRoom;
-    tenthRMC[2]="SOUTH";
-    tenthRMD[2]=&TwelfthRoom;
+    tenthRMC[0]="NORTH";
+    tenthRMD[0]=&EleventhRoom;
+    tenthRMC[1]="SOUTH";
+    tenthRMD[1]=&TwelfthRoom;
     
     eleventhRMC[0]="SOUTH";
     eleventhRMD[0]=&TenthRoom;
@@ -300,10 +297,10 @@ int main(){
     
     fourteenthRMC[0]="WEST";
     fourteenthRMD[0]=&ThirteenthRoom;
+    //done with room connection
 
-	//done with room connection
 	Player Player1(&FirstRoom);
-	//cout<<"debug11\n";
+
 	char check1;
 	bool gameOver = false;
 	cout << "Welcome to [WIP] Adventure! Do you need instructions? (Y/N)" << endl;
@@ -332,11 +329,6 @@ int main(){
 		toUpper(verb);
 		toUpper(noun);
 		cout << endl;
-		if (noun == "")
-		{
-			//noun = verb;
-			//verb = "";
-		}
 		if (verb == "QUIT")
 			break;
 		if (ss.rdbuf()->in_avail() != 0) // Check if there're any words left in buffer, if there are, then user input was more than 2 words.
@@ -363,6 +355,8 @@ int main(){
 	
 	}
     cout << "THANKS FOR PLAYING [WIP] ADVENTURE!" << endl;
+
+    //Deleting dynamic arrays.
     delete firstRMC;
     delete [] firstRMD;
     delete secondRMC;
