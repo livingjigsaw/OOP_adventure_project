@@ -112,7 +112,14 @@ void Player::performAction(string verb, string noun)
 
     else if (verb == "OBSERVE" || verb == "READ" || verb == "LOOK")
     {
-		if(noun=="ROOM" || noun==""){
+		if(verb=="LOOK"&&noun=="INVENTORY"){
+			string currentInventory = inventory()->listAll();
+			if(currentInventory=="")
+				cout << "You have nothing in your inventory\n";
+			else
+				cout << "You have a " << currentInventory <<" in your inventory\n"; 
+		}	
+		else if(noun=="ROOM" || noun==""){
 			cout << "You're in "<<getDescription(verb, noun) <<endl;
 			string itemsInRoom=currentLocation()->listItem()->listAll();
 			if (itemsInRoom != "")
@@ -193,7 +200,9 @@ void Player::performAction(string verb, string noun)
 	}
 	
 	else if(verb == "HELP"){
-		cout << " You must enter in a two-word command, in the format\nverb noun\n\nIf you get stuck, try looking at the room or at some of the items in your inventory. \nGood Luck!\n";
+		cout << " You must enter in a two-word command, in the format\n \nverb noun\n\n";
+		cout << "If you get stuck, try looking at the room or at some of the items in your inventory.\n\n";
+		cout << "If you forget the items you have with you, look at your inventory to see them.\n\nGood Luck!\n";
 	}
 	
     else
