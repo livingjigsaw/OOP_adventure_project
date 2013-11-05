@@ -87,7 +87,7 @@ int main(){
 	Room** fourthRMD =new Room*[2]; fourthRMD[0]=NULL; // second room's move
     string n4="Fourthroom";
     string SD4="a pitch black room. A door lies to the west, where you came from.";
-    string LD4="There is a machine with the word generator on the wall behind it, as well as a switch in the on position, but it doesn't make a connection. There is a mysterious smooth sphere in the middle of the room, as well as a locked door to the east that seems to be connected to the generator.";
+    string LD4="There is a machine with the word generator on the wall behind it, as well as a switch in the on position, but it doesn't make a connection. There is a mysterious smooth sphere in the middle of the room, as well as a locked door to the south that seems to be connected to the generator.";
 	Room FourthRoom(n4, 1, &fourthRList ,SD4,LD4, fourthRMC,fourthRMD, 2);
     //Constructing the Fourth room.
     
@@ -97,12 +97,12 @@ int main(){
     List fifthRList;// Fifth room's item list.
 	fifthRList.append((Item*)&Dartgun);
 
-	string* fifthRMC = new string [1]; // second room's move command.
-	Room** fifthRMD =new Room*[1]; fifthRMD[0]=NULL; // second room's move
+	string* fifthRMC = new string [2]; // second room's move command.
+	Room** fifthRMD =new Room*[2]; fifthRMD[0]=NULL; // second room's move
     string n5="Fifthroom";
-    string SD5="a bare abandoned laboratory. The smell of electricity is in the air as you step down from a raised platform in the middle of the room.";
+    string SD5="a bare abandoned laboratory. The smell of electricity is in the air as you walk in from the north. ";
     string LD5=" You see a single door to the west but realize it is locked electronically, requiring a palm scan to unlock it. You see an open compartment that holds a dartgun. Tentatively you place your hand on the scanner and to your surprise the door slides open.";
-	Room FifthRoom(n5, 1, &fifthRList ,SD5,LD5, fifthRMC,fifthRMD, 1);
+	Room FifthRoom(n5, 1, &fifthRList ,SD5,LD5, fifthRMC,fifthRMD, 2);
     //Constructing the Fifth room.
     
     
@@ -114,7 +114,7 @@ int main(){
 	string* sixthRMC = new string [2]; // second room's move command.
 	Room** sixthRMD =new Room*[2]; sixthRMD[0]=NULL; // second room's move
     string n6="Sixthroom";
-    string SD6="in a hallway. There are doors to the east, north and south. There are signs above each of the doors but two of them are so rusted you can't make out a word.The sign over the south door shows 'STAIRWELL'. ";
+    string SD6="in a hallway. There are doors to the east, north and south. There are signs above each of the doors but two of them are so rusted you can't make out a word. The sign over the south door shows 'STAIRWELL'. ";
     string LD6=" In what you hope is red paint, you see the words 'GET DOWNSTAIRS IF YOU STILL CAN' scrawled in large letters across a wall. Upon inspection, the south door seems to be barricaded. You hear dripping in the distance.";
 	Room SixthRoom(n6, 0, &sixthRList ,SD6,LD6, sixthRMC,sixthRMD, 2);
     //Constructing the Sixth room.
@@ -249,11 +249,13 @@ int main(){
     fourthRMC[0]="WEST";
     fourthRMD[0]=&SecondRoom;
     
-    fourthRMC[1]="EAST";
+    fourthRMC[1]="SOUTH";
     fourthRMD[1]=&FifthRoom;
     
     fifthRMC[0]="WEST";
     fifthRMD[0]=&SixthRoom;
+    fifthRMC[1]="NORTH";
+    fifthRMD[1]=&FourthRoom;
     //    cout<<"\n debug A\n";
     sixthRMC[0]="EAST";
     sixthRMD[0]=&FifthRoom;
@@ -345,7 +347,7 @@ int main(){
 			noun = ""; // Clears the variables
 			verb = "";
 		}
-        if (verb == "PRESS" && noun == "REDBUTTON")
+        if (Player1.currentLocation() == &FourteenthRoom && verb == "PRESS" && noun == "REDBUTTON")
         {
             cout << "Your right hand balls into a fist, ready to satisfy your urge of slamming the seductively-huge red button. " << endl;
             cout << "As you bring your fist down, memories come flooding back. You're struck with a massive sense of deja vu as you realize that you've done this a million times before. " << endl;
