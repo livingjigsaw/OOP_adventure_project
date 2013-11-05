@@ -112,19 +112,22 @@ std::string List::listAll(){		//Env items placed in list FIRST have PRIORITY!!!
     Node* walker=head;
 	string sum ="";
     while (walker!=NULL) {
-		if(walker->next==NULL){
-			if(walker->prev==NULL){
-				if(!walker->data->currentState())
-					sum += walker->data->name();
+		if(!walker->data->currentState()){
+			if(walker->next==NULL){
+				if(walker->prev==NULL){
+						sum += walker->data->name();
+				}
+				else
+					sum += "and " + walker->data->name();
 			}
+			else if(sum == "")
+				sum += walker->data->name();
 			else
-				sum += "and " + walker->data->name();
+				sum += walker->data->name() + ", ";
+		
 		}
-		else
-			sum += walker->data->name() + ", ";
-	
 		walker=walker->next;
-    }
+	}
     return sum;
 }
 

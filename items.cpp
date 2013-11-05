@@ -57,6 +57,7 @@ bool StatusItem::use(List* roomInventory, string& target){ //assume the commad f
 	else{
 		match->currentState(1); //changes environmental var state TO FALSE TO MAKE IT IGNORED, for the description loader
 		target = match->name();
+		match->changeEnv(roomInventory);
 		return 1;
 		}
 }
