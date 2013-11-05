@@ -56,159 +56,177 @@ int main(){
     string n2="Secondroom";
     string SD2="a large, open room that's somewhat bare. There is a glass room in the Center of this room, and a wooden door to the east, and a massive opening where the hatch once was.";
     string LD2="Warning lights are flashing next to the massive opening, but no alarms are going off. the control room blinks many colors at off interval";
-	Room SecondRoom(n2, 3, &secondRList ,SD2,LD2, secondRMC,secondRMD, 3);
+	Room SecondRoom(n2, 1, &secondRList ,SD2,LD2, secondRMC,secondRMD, 3);
     //Constructing the second room.
     
     
     //third Room
 	InventoryItem Flashlight("FLASHLIGHT", "Small, yet emits a powerful beam.");
+    InventoryItem Button("BOTTON", "The Botton says 'receive signal'.");
     List thirdRList;// third room's item list.
 	thirdRList.append((Item*)&Flashlight);
+    thirdRList.append((Item*)&Button);
 
 	string* thirdRMC = new string [1]; // second room's move command.
 	Room** thirdRMD =new Room*[1]; thirdRMD[0]=NULL; // second room's move
     string n3="Thirdroom";
     string SD3="the glass room, where there is a large array of switches and controls, all out of power.";
     string LD3=" This seems to be a control room of some sort";
-	Room ThirdRoom(n3, 3, &thirdRList ,SD3,LD3, thirdRMC,thirdRMD, 1);
+	Room ThirdRoom(n3, 2, &thirdRList ,SD3,LD3, thirdRMC,thirdRMD, 1);
     //Constructing the third room.
     
     
     //Fourth Room
+    InventoryItem Orb("ORB", "there is a metallic orb on the ground, very metllic and shiny, perfectly smooth except for an indentation, placed symmetrically around the orb, You can type 'move teleportation' to move to the next room for only once.");
     List fourthRList;// Fourth room's item list.
+    fourthRList.append((Item*)&Orb);
 
 	string* fourthRMC = new string [2]; // second room's move command.
 	Room** fourthRMD =new Room*[2]; fourthRMD[0]=NULL; // second room's move
     string n4="Fourthroom";
     string SD4="through the wooden door, is a pitch black room.";
     string LD4=" There is a machine with the word generator on the wall behind it, as well as a switch in the on position, but it doesn't make connection(the pocketknife can be jammed there to establish connetion, but electrocutes the player if not in off position) so yes, someone can die in the demo TROLLOLOLZ ";
-	Room FourthRoom(n4, 3, &fourthRList ,SD4,LD4, fourthRMC,fourthRMD, 2);
+	Room FourthRoom(n4, 1, &fourthRList ,SD4,LD4, fourthRMC,fourthRMD, 2);
     //Constructing the Fourth room.
     
     
     //Fifth Room
+    InventoryItem Dartgun("DARTGUN", "a dart gun which can kill you or other creature in the game.");
     List fifthRList;// Fifth room's item list.
-	fifthRList.append((Item*)&Hatch);
+	fifthRList.append((Item*)&Dartgun);
 
 	string* fifthRMC = new string [1]; // second room's move command.
 	Room** fifthRMD =new Room*[1]; fifthRMD[0]=NULL; // second room's move
     string n5="Fifthroom";
     string SD5="You stand in a bare abandoned laboratory, still clutching the orb. The smell of electricity is in the air as you step down from a raised platform in the middle of the room.";
     string LD5=" You see a single door to the west (ROOM 6) but realize it is locked electronically, requiring a palm scan to unlock it. (If player pressed button) - You see an open compartment with what looks like a dart gun (DARTGUN) in it. (Not required to finish game).";
-	Room FifthRoom(n5, 3, &fifthRList ,SD5,LD5, fifthRMC,fifthRMD, 1);
+	Room FifthRoom(n5, 1, &fifthRList ,SD5,LD5, fifthRMC,fifthRMD, 1);
     //Constructing the Fifth room.
     
     
     //Sixth Room
     List sixthRList;// Fifth room's item list.
   
-	sixthRList.append((Item*)&Hatch);
+	sixthRList.append((Item*)&Clock);
 
 	string* sixthRMC = new string [2]; // second room's move command.
 	Room** sixthRMD =new Room*[2]; sixthRMD[0]=NULL; // second room's move
     string n6="Sixthroom";
     string SD6="You are in a hallway. There are doors to the east (ROOM 5), north (ROOM 7) and south (Can't enter, door is barricaded). There are signs above each of the doors but two of them are so rusted you can't make out a word.The sign over the south door shows 'STAIRWELL'. ";
     string LD6=" In what you hope is red paint, you see the words 'GET DOWNSTAIRS IF YOU STILL CAN.' scrawled in large letters across a wall. You hear dripping in the distance.";
-	Room SixthRoom(n6, 3, &sixthRList ,SD6,LD6, sixthRMC,sixthRMD, 2);
+	Room SixthRoom(n6, 0, &sixthRList ,SD6,LD6, sixthRMC,sixthRMD, 2);
     //Constructing the Sixth room.
     
     //Seventh Room
+    InventoryItem Chocolate("CHOCOLATE", "a Chocolate bar looks fine");
+    InventoryItem ZipFizz("ZIPFIZZ", "a bottle something called ZipFizz");
     List seventhRList;// Seventh room's item list.
     //cout << "debug42\n"; //*********current final success**********
     //		initialize(firstRList); //herpaderp the list has no constructor
-	seventhRList.append((Item*)&Hatch);
+	seventhRList.append((Item*)&Chocolate);
+    seventhRList.append((Item*)&ZipFizz);
 	string* seventhRMC = new string [3]; // second room's move command.
 	Room** seventhRMD =new Room*[3]; seventhRMD[0]=NULL; // second room's move
     string n7="Seventhroom";
     string SD7="You are in a hallway. There are doors to the east (ROOM 5), north (ROOM 7) and south (Can't enter, door is barricaded). There are signs above each of the doors but two of them are so rusted you can't make out a word.The sign over the south door shows 'STAIRWELL'. ";
     string LD7=" In what you hope is red paint, you see the words 'GET DOWNSTAIRS IF YOU STILL CAN.' scrawled in large letters across a wall. You hear dripping in the distance.";
-	Room SeventhRoom(n7, 3, &seventhRList ,SD7,LD7, seventhRMC,seventhRMD, 2);
+	Room SeventhRoom(n7, 2, &seventhRList ,SD7,LD7, seventhRMC,seventhRMD, 2);
     //Constructing the Seventh room.
     
     //Eighth Room
+    InventoryItem Device("DEVICE", "One of the bodies wears a lab coat, in his hands he cradles a device. his last act seemed to be protecting the device");
+    InventoryItem Janitorkeys("JANITORKEYS", "Janitor's ring of keys, he has looped on around his belt");
     List eighthRList;// Eighth room's item list.
-	eighthRList.append((Item*)&Hatch);
+	eighthRList.append((Item*)&Device);
+    eighthRList.append((Item*)&Janitorkeys);
 	
 	string* eighthRMC = new string [2]; // second room's move command.
 	Room** eighthRMD =new Room*[2]; eighthRMD[0]=NULL; // second room's move
     string n8="EighthRoom";
     string SD8="A door to the west leads back to the cafeteria (ROOM 7) You have found the source of the smell. In the restroom, two unidentifiable dead bodies slump against a wall.";
     string LD8=" Their bodies are covered with bite marks, and their limbs look as if they were torn off. One of the bodies wears a lab coat, in his hands he cradles a device (DEVICE), his last act seemed to be protecting the device. The other body is even more mangled, but you conclude that he was a janitor based on the ring of keys(JANITORKEYS) he has looped on around his belt.";
-	Room EighthRoom(n8, 3, &eighthRList ,SD8,LD8, eighthRMC,eighthRMD, 1);
+	Room EighthRoom(n8, 2, &eighthRList ,SD8,LD8, eighthRMC,eighthRMD, 1);
     //Constructing the Eighth room.
     
     
     //Ninth Room
+    InventoryItem Sapphire("SAPPHIRE", "the blue gem, seems like it has connection with the Ometallic orb");
     List ninthRList;// Ninth room's item list.
-	ninthRList.append((Item*)&Hatch);
+	ninthRList.append((Item*)&Sapphire);
 
 	string* ninthRMC = new string [2]; // second room's move command.
 	Room** ninthRMD =new Room*[2]; ninthRMD[0]=NULL; // second room's move
     string n9="NinthRoom";
     string SD9="You walk into the room and right on to the edge of a gaping hole. You have found the source of the dripping sounds: A giant vat of what is presumably strong acid lies partially smashed on one end of the room. After an indeterminable time, the acid has corroded into the ground. Acid continues to drip on to the floor below, sizzling as it comes into contact with the tiled floor.";
     string LD9=" Once your eyes adjusted to the low light, you see a blue glint on the other side of the room; it seems the acid had also destroyed part of a safe. However, you can't reach the safe because of the huge hole in the middle of the room. A door to the south leads back to the cafeteria (ROOM 7). You can climb down the hole to the floor below, but you won't be able to return. (ROOM 10) If the player chooses to USE metallic orb, the blue gem (sapphire) would be attracted to the orb. ";
-	Room NinthRoom(n9, 3, &ninthRList ,SD9,LD9, ninthRMC,ninthRMD, 2);
+	Room NinthRoom(n9, 1, &ninthRList ,SD9,LD9, ninthRMC,ninthRMD, 2);
     //Constructing the Ninth room.
     
     //Tenth Room
     List tenthRList;// Tenth room's item list.
-	tenthRList.append((Item*)&Hatch);
+	tenthRList.append((Item*)&Clock);
     
 	string* tenthRMC = new string [3]; // second room's move command.
 	Room** tenthRMD =new Room*[3]; tenthRMD[0]=NULL; // second room's move
     string n10="TenthRoom";
     string SD10="You're in another hallway. The walls are covered with peeling wallpaper, with brown, foul smelling stains splattered on them.";
     string LD10=" There is a door to the north (ROOM 11) and another to the south (ROOM 12). The only light in the hallway comes from the hole in the ceiling and the sound of acid dripping and sizzling fills the hallway. You hear a scraping noise in the distance. ";
-	Room TenthRoom(n10, 3, &tenthRList ,SD10,LD10,tenthRMC,tenthRMD, 3);
+	Room TenthRoom(n10, 0, &tenthRList ,SD10,LD10,tenthRMC,tenthRMD, 3);
     //Constructing the Tenth room.
     
     //Eleventh Room
+    InventoryItem  Notebook("NOTEBOOK", "This notebook explains that the scientists were attempting to create a clone of an influencial politican but failed repeatedly. The failed experiments grew feral and violent and were kept under lock. The journal ends by stating that the scientists had isolated the problematic gene and are working on a serum to cure it.");
     List eleventhRList;// Eleventh room's item list.
-	eleventhRList.append((Item*)&Hatch);
+	eleventhRList.append((Item*)&Notebook);
     
 	string* eleventhRMC = new string [2]; // second room's move command.
 	Room** eleventhRMD =new Room*[2]; eleventhRMD[0]=NULL; // second room's move
     string n11="EleventhRoom";
     string SD11="You're in another hallway. The walls are covered with peeling wallpaper, with brown, foul smelling stains splattered on them.";
     string LD11=" There is a door to the north (ROOM 11) and another to the south (ROOM 12). The only light in the hallway comes from the hole in the ceiling and the sound of acid dripping and sizzling fills the hallway. You hear a scraping noise in the distance. ";
-	Room EleventhRoom(n11, 3, &eleventhRList ,SD11,LD11,eleventhRMC,eleventhRMD, 1);
+	Room EleventhRoom(n11, 1, &eleventhRList ,SD11,LD11,eleventhRMC,eleventhRMD, 1);
     //Constructing the Eleventh room.
     
     //Twelfth Room
+    EnvironmentItem Lockeddoor("LOCKEDDOOR", "JANITORKEYS", "MOVE", "EAST");
+    EnvironmentItem Zombie("ZOMBIES","DARTGUN","MOVE", "EAST");
     List twelfthRList;// Twelfth room's item list.
-	twelfthRList.append((Item*)&Hatch);
+	twelfthRList.append((Item*)&Lockeddoor);
+    twelfthRList.append((Item*)&Zombie);
     
 	string* twelfthRMC = new string [2]; // second room's move command.
 	Room** twelfthRMD =new Room*[2]; twelfthRMD[0]=NULL; // second room's move
     string n12="TwelfthRoom";
     string SD12="You enter the room and immediately see a door east(leading to ROOM 13) blocked(LOCKEDDOOR) by two... legless beings (ZOMBIES). You are surprised to see that these are still alive, but enable to move foward. The scraping noise is caused by their clawing of the floor, and upon noticing you they look up.";
     string LD12=" You are startled to see that they both have the exact same face. Your face. In fact, they look exactly like you, except for the minor detail of not having legs. A door to the north leads back to the hallway. (ROOM 10)(TWO THINGS BLOCK THE WAY FORWARD: THE ZOMBIES AND THE LOCKED DOOR. THE PLAYER WOULD FIRST HAVE TO SHOOT THE ZOMBIES WITH THE DART GUN AND THEN OPEN THE DOOR USING THE JANITOR KEYS)" ;
-	Room TwelfthRoom(n12, 3, &eleventhRList ,SD12,LD12,twelfthRMC,twelfthRMD, 2);
+	Room TwelfthRoom(n12, 2, &eleventhRList ,SD12,LD12,twelfthRMC,twelfthRMD, 2);
     //Constructing the Twelfth room.
     
     //Thirteenth Room
+    InventoryItem Notes("NOTES", "By reading the notes, the player learns that the serum created by the scientists to suppress the feral genes was tested on a clone but it only enhanced its strength. It murdered the scientists in the lab, and freed the rest of the clones. The clones started to hunt the scientists and attacking them. The remaining survivors barricaded themselves in this room for a week, but the clones were relentless. The scientists knew that they would die of starvation if they didn't try to escape, and seeing as the mysterious door to the east would not budge, their only option was to fight their way out.");
     List thirteenthRList;// Thirteenth room's item list.
-	thirteenthRList.append((Item*)&Hatch);
+	thirteenthRList.append((Item*)&Notes);
     
 	string* thirteenthRMC = new string [2]; // second room's move command.
 	Room** thirteenthRMD =new Room*[2]; twelfthRMD[0]=NULL; // second room's move
     string n13="ThirteenthRoom";
     string SD13="You walk in and immediately get hit by a foul stench. There are dead bodies everywhere. Most have decomposed to the bone, but you make out some details: The bodies wearing lab coats are missing limbs while the others looks exactly alike. Like you.";
     string LD13=" One of the bodies wearing a lab coat clutches a a few pieces of paper. (NOTES) There is a door to the weat (BACK TO ROOM 12) and another to the east. (ROOM 14), but it is blocked by a hatch that looks like it can receive a spherical object. You feel sick and want to get out of the room as soon as possible.";
-	Room ThirteenthRoom(n13, 3, &thirteenthRList ,SD13,LD13,thirteenthRMC,thirteenthRMD, 2);
+	Room ThirteenthRoom(n13, 1, &thirteenthRList ,SD13,LD13,thirteenthRMC,thirteenthRMD, 2);
     //Constructing the Thirteenth room.
     
     
     //Fourteenth Room
+    EnvironmentItem Lockedmagicdoor("MAGICDOOR", "ORB", "MOVE", "EAST");
     List fourteenthRList;// Fourteenth room's item list.
-	fourteenthRList.append((Item*)&Hatch);
+	fourteenthRList.append((Item*)&Lockedmagicdoor);
     
 	string* fourteenthRMC = new string [2]; // second room's move command.
 	Room** fourteenthRMD =new Room*[2]; twelfthRMD[0]=NULL; // second room's move
     string n14="FourteenthRoom";
     string SD14="You walk into a futuristic room with sleek metal walls on all sides. A single large screen dominates the far end, opposite the door.";
     string LD14=" Big bold letters spell out 'CONTINUE?' on the screen. Right below the screen is a big red button. There is a door to the west (ROOM 13). Type 'Continue' to press the BIG RED BUTTON!";
-	Room FourteenthRoom(n14, 3, &fourteenthRList ,SD14,LD14,fourteenthRMC,fourteenthRMD, 1);
+	Room FourteenthRoom(n14, 1, &fourteenthRList ,SD14,LD14,fourteenthRMC,fourteenthRMD, 1);
     //Constructing the Thirteenth room.
 
     //room connection
