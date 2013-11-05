@@ -1,7 +1,0 @@
-initDemo(){
-	//initialize Items
-
-
-
-
-}

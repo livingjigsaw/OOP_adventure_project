@@ -352,9 +352,9 @@ int main(){
             cout << "Mortified, you try your hardest to retract your fist, but it is too late - inertia has taken over at this point, and you can only watch in despair as your fist slam on to the button." << endl;
             cout << "A bright flash blinds you and you realize that you are on the ground." << endl;
             cout << "You wake up in a small generic room, with basic living necessities. You shake off a minor headache, and can't help but feel that you've been here before. There is a door to the north." << endl;
-            string junk;
-            getline (cin,junk);
+            cout << endl;
             gameOver = true;
+            break;
         }
 		//File input ends here.
 		Player1.performAction(verb, noun);
@@ -363,4 +363,32 @@ int main(){
 	
 	}
     cout << "THANKS FOR PLAYING [WIP] ADVENTURE!" << endl;
+    delete firstRMC;
+    delete [] firstRMD;
+    delete secondRMC;
+    delete [] secondRMD;
+    delete thirdRMC;
+    delete [] thirdRMD;
+    delete fourthRMC;
+    delete [] fourthRMD;
+    delete fifthRMC;
+    delete [] fifthRMD;
+    delete sixthRMC;
+    delete [] sixthRMD;
+    delete seventhRMC;
+    delete [] seventhRMD;
+    delete eighthRMC;
+    delete [] eighthRMD;
+    delete ninthRMC;
+    delete [] ninthRMD;
+    delete tenthRMC;
+    delete [] tenthRMD;
+    delete eleventhRMC;
+    delete [] eleventhRMD;
+    delete twelfthRMC;
+    delete [] twelfthRMD;
+    delete thirteenthRMC;
+    delete [] thirteenthRMD;
+    delete fourteenthRMC;
+    delete [] fourteenthRMD;
 }
