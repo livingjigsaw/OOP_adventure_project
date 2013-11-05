@@ -15,7 +15,7 @@ Room::Room(string n, int numI, List* nodeItem, string SD, string LD, string* mC,
 
 Room* Room::destLookup(string command)
 {
-    for (int i=numNeighbours; i>0; i--) {
+    for (int i=0; i<numNeighbour(); i++) {
         if (command==moveCommands[i]) {
             return moveDests[i];
         }

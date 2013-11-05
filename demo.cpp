@@ -122,9 +122,7 @@ int main(){
     //Seventh Room
     InventoryItem Chocolate("CHOCOLATE", "A chocolate bar that seems slightly mouldy.");
     InventoryItem ZipFizz("ZIPFIZZ", "A small bottle of what seems to be a brain-enhancing stimulant.");
-    List seventhRList;// Seventh room's item list.
-    //cout << "debug42\n"; //*********current final success**********
-    //		initialize(firstRList); //herpaderp the list has no constructor
+    List seventhRList;// Seventh room's item list. 
 	seventhRList.append((Item*)&Chocolate);
     seventhRList.append((Item*)&ZipFizz);
 	string* seventhRMC = new string [3]; // second room's move command.
