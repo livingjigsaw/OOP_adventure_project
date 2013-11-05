@@ -19,7 +19,7 @@ void toUpper(string& in){
 int main(){
 	InventoryItem Journal("JOURNAL", "A small notebook with writing in it. There are some references to cakes and lies.");
 	InventoryItem PocketKnife("POCKETKNIFE", "A small, metal knife. Slightly rusted and not very sharp.");
-	InventoryItem Clock("ALARMCLOCK", "Permanently stuck at 3:16.");
+	InventoryItem Clock("ALARMCLOCK", "Permanently stuck at 3:16. A square protrusion on the back looks like it can fit into something.");
 	//InventoryItem Painting("PAINTING", "A picture of a bearded man whose eyes seems to follow you wherever you move in the room.");
 	//Item Darkness("Darkness");
 //	Item GeneratorSwitch("GeneratorSwitch");
@@ -61,11 +61,11 @@ int main(){
     
     
     //third Room
-	InventoryItem Flashlight("FLASHLIGHT", "Small, yet emits a powerful beam.");
-    InventoryItem Button("BUTTON", "The button says 'receive signal'.");
+    EnvironmentItem Case("CASE", "ALARMCLOCK", "TAKE", "ORB", "There is an orb sealed in a case that has no keyhole. You notice a peculiar square slot on the console.");
+    StatusItem Orb("ORB", "A metallic orb, very metllic and shiny, perfectly smooth except for an indentation.");
     List thirdRList;// third room's item list.
-	thirdRList.append((Item*)&Flashlight);
-    thirdRList.append((Item*)&Button);
+    thirdRList.append(&Case);
+    thirdRList.append(&Orb);
 
 	string* thirdRMC = new string [1]; // second room's move command.
 	Room** thirdRMD =new Room*[1]; thirdRMD[0]=NULL; // second room's move
@@ -78,9 +78,7 @@ int main(){
     
     //Fourth Room
     EnvironmentItem Generator("GENERATOR", "POCKETKNIFE", "MOVE", "EAST", "There is a machine with the word Generator on the wall behind it. A wire connects the generator to the door in the room.");
-    StatusItem Orb("ORB", "A metallic orb, very metllic and shiny, perfectly smooth except for an indentation.");
     List fourthRList;// Fourth room's item list.
-    fourthRList.append((Item*)&Orb);
     fourthRList.append(&Generator);
 
 	string* fourthRMC = new string [2]; // second room's move command.
