@@ -352,6 +352,9 @@ int main(){
             cout << "Mortified, you try your hardest to retract your fist, but it is too late - inertia has taken over at this point, and you can only watch in despair as your fist slam on to the button." << endl;
             cout << "A bright flash blinds you and you realize that you are on the ground." << endl;
             cout << "You wake up in a small generic room, with basic living necessities. You shake off a minor headache, and can't help but feel that you've been here before. There is a door to the north." << endl;
+            string junk;
+            getline (cin,junk);
+            gameOver = true;
         }
 		//File input ends here.
 		Player1.performAction(verb, noun);
@@ -359,4 +362,5 @@ int main(){
 		cout << endl;
 	
 	}
+    cout << "THANKS FOR PLAYING [WIP] ADVENTURE!" << endl;
 }
