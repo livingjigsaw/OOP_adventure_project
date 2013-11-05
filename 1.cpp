@@ -114,8 +114,9 @@ void Player::performAction(string verb, string noun)
     {
 		if(noun=="ROOM" || noun==""){
 			cout << "You're in "<<getDescription(verb, noun) <<endl;
-			cout <<"\nThere is a " << currentLocation()->listItem()->listAll() <<" in this room." << endl;
-		}
+			string itemsInRoom=currentLocation()->listItem()->listAll();
+			if (itemsInRoom != "")
+				cout <<"There is a " << itemsInRoom <<" in this room." << endl;		}
 		else{
 			bool found = false;
 			bool status = false;
@@ -169,6 +170,17 @@ void Player::performAction(string verb, string noun)
 		Item* wanted = inventory()->findByName(noun); //this is the item we are looking for
  		if(wanted==NULL)
 			cout << "You have no " << noun <<" in your inventory\n";
+		else if(wanted->currentState()){
+			cout << "This item cannot be used in it's current state\n";
+		}
+		else if(wanted->target()!=""){
+			string target="";	//completely different from above statement
+			bool itWorked = wanted->use(inventory(), target);
+			if(itWorked)
+				cout << "You used " << noun << " on " << target<<".\n";
+			else
+				cout << "You cannot use " << noun << " here. \n";
+		}
 		else{
 			string target = "";
 			bool itWorked = wanted->use(currentLocation()->listItem(), target);

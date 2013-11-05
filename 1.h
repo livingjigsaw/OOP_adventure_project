@@ -30,12 +30,13 @@ public:
 	virtual bool currentState(){return 0;};	//NOTE: an environmental Item is active when set to 1, as in TRUE! all other items and inactive return 0
 	virtual string verb(){return "";};	
 	virtual string noun(){return "";};	
+	virtual string target(){return "";};
 	
 	//setters
 	void name(string in){itemName=in;};
 	void description(string in){info=in;};
 	virtual void currentState(bool in){};
-	
+	virtual void target(string in){};
 	//for inheritance
 	virtual bool eat(List* charInventory){charInventory=charInventory; return 0;}; //no-ops to avoid compiler errors, needs parameters so child classes properly inherit
 	virtual bool use(List* roomInventory, string& target){return 0;};
@@ -107,12 +108,29 @@ protected:
 	bool status; //this affects the appropriate environment variable
 public:
 	StatusItem(){};
-	StatusItem(string in, string descript){name(in); description(descript);};
+	StatusItem(string in, string descript){name(in); description(descript); status=1;};
 	~StatusItem(){};
 	//getter
 	bool itemState(){return status;};
 	//setter
 	void itemState(bool in){status=in;};
+	
+	bool use(List* roomInventory, string& target);
+
+};
+
+class pieceItem: public InventoryItem{ 	//these will interact with environmental items
+private:
+	string targetItem;	//this is the status item that this affects.
+public:
+	pieceItem(){};
+	pieceItem(string in, string descript){name(in); description(descript);};
+	~pieceItem(){};
+	//getter
+	string target(){return targetItem;};
+	//setter
+	void itemState(string in){targetItem=in;};
+	bool use(List* charInventory, string& iTarget);
 };
 
 class EnvironmentItem:public Item{

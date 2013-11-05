@@ -43,7 +43,8 @@ int main(){
     
     
     //second Room
-	EnvironmentItem Hatch("HATCH", "orb", "MOVE", "EAST");
+	EnvironmentItem Hatch("HATCH", "POCKETKNIFE", "MOVE", "WEST");
+	
 
     List secondRList;// second room's item list.
     //cout << "debug42\n"; //*********current final success**********
